@@ -3,36 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dakar Elite Driver | Excellence Automobile</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Dakar Elite Driver | Prestige & Excellence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #D4AF37;
-            --gold-soft: #f1d592;
             --black: #050505;
-            --dark-gray: #121212;
+            --glass: rgba(0, 0, 0, 0.85);
         }
 
         * { box-sizing: border-box; }
 
+        /* FOND D'ÉCRAN GLOBAL : UTILISE TOUTE LA PAGE */
         body {
             margin: 0;
             background-color: var(--black);
-            color: #ffffff;
+            color: white;
             font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-        }
-
-        /* LOGO EN FOND D'ÉCRAN GLOBAL (FILIGRANE DISCRET) */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: url('logo.png') no-repeat center;
-            background-size: 60%;
-            opacity: 0.05; /* Très discret pour l'élégance */
-            z-index: -1;
-            pointer-events: none;
+            /* Le logo couvre tout et reste fixe au défilement */
+            background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), 
+                        url('logo.png') no-repeat center center fixed;
+            background-size: cover;
         }
 
         /* NAVIGATION */
@@ -41,142 +32,123 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 5%;
-            background: rgba(0, 0, 0, 0.95);
+            background: rgba(0, 0, 0, 0.9);
             border-bottom: 1px solid var(--gold);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .logo-text { font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.4rem; font-weight: bold; }
+        .logo-nav { font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.2rem; }
 
-        nav ul { display: flex; list-style: none; gap: 20px; margin: 0; padding: 0; }
-        nav a { color: white; text-decoration: none; font-size: 0.8rem; letter-spacing: 1px; transition: 0.3s; }
-        nav a:hover { color: var(--gold); }
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav a { color: white; text-decoration: none; font-size: 0.8rem; letter-spacing: 1px; }
 
-        /* SECTION ACCUEIL AVEC LOGO CENTRAL */
+        /* SECTION HERO (ACCUEIL) : LOGO GÉANT */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('logo.png') no-repeat center;
-            background-size: 40%; /* Taille du logo au centre */
+            /* Le logo occupe tout l'espace central ici aussi */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
+                        url('logo.png') no-repeat center center;
+            background-size: contain; /* Pour voir le logo en entier sans le couper */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            border-bottom: 2px solid var(--gold);
+            padding: 20px;
         }
 
-        .hero h1 { font-family: 'Cinzel', serif; font-size: 3.5rem; color: var(--gold); margin: 0; }
-        .hero p { font-size: 1.2rem; letter-spacing: 3px; text-transform: uppercase; margin-top: 10px; }
-
-        .container { max-width: 1200px; margin: auto; padding: 60px 20px; }
-
-        /* CARTES DE VÉHICULES */
-        .section-title { text-align: center; font-family: 'Cinzel', serif; color: var(--gold); font-size: 2rem; margin-bottom: 40px; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-        
-        .card {
-            background: var(--dark-gray);
-            border: 1px solid #222;
-            transition: 0.4s;
-            position: relative;
-            overflow: hidden;
+        .hero h1 { 
+            font-family: 'Cinzel', serif; 
+            font-size: clamp(2rem, 8vw, 4rem); 
+            color: var(--gold); 
+            margin: 0;
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.8);
         }
-        
-        .card:hover { border-color: var(--gold); transform: translateY(-5px); }
 
-        .card-img { width: 100%; height: 230px; object-fit: cover; background: #222; border-bottom: 1px solid var(--gold); }
+        .hero p { font-size: 1.2rem; letter-spacing: 4px; text-transform: uppercase; margin: 10px 0; }
 
-        .card-content { padding: 25px; }
-        .card-content h3 { color: var(--gold); margin-top: 0; font-family: 'Cinzel', serif; }
-        
-        .price { font-size: 1.8rem; font-weight: bold; margin: 15px 0; color: #fff; }
-        .price span { font-size: 0.9rem; color: var(--gold); }
-
-        .btn-booking {
-            display: inline-block;
+        /* BOUTON WHATSAPP */
+        .btn-wa {
             background: var(--gold);
             color: black;
-            padding: 12px 25px;
+            padding: 18px 35px;
             text-decoration: none;
             font-weight: bold;
-            text-transform: uppercase;
-            font-size: 0.8rem;
+            border-radius: 50px;
+            margin-top: 30px;
+            display: inline-block;
             transition: 0.3s;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
         }
-        .btn-booking:hover { background: var(--gold-soft); letter-spacing: 1px; }
+        .btn-wa:hover { transform: scale(1.05); background: #f1d592; }
 
-        /* SERVICES INCLUS */
-        .premium-perks {
-            background: #111;
-            padding: 40px;
-            margin: 40px 0;
-            border-left: 4px solid var(--gold);
+        /* CONTENU DU SITE */
+        .container { max-width: 1200px; margin: auto; padding: 80px 20px; }
+
+        .section-title { 
+            text-align: center; 
+            font-family: 'Cinzel', serif; 
+            color: var(--gold); 
+            font-size: 2.2rem; 
+            margin-bottom: 50px; 
+        }
+
+        /* GRILLE DE TARIFS */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        
+        .card {
+            background: var(--glass);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 40px 25px;
+            text-align: center;
+            transition: 0.4s;
+            backdrop-filter: blur(10px);
+        }
+        .card:hover { border-color: var(--gold); transform: translateY(-10px); }
+
+        .card h3 { color: var(--gold); font-family: 'Cinzel', serif; font-size: 1.5rem; }
+        .price { font-size: 2rem; font-weight: bold; margin: 20px 0; border-bottom: 1px solid #333; padding-bottom: 20px; }
+        .price span { font-size: 0.9rem; color: var(--gold); display: block; }
+
+        /* SERVICES PREMIUM */
+        .perks {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
             gap: 20px;
-        }
-        .perk { text-align: center; font-size: 0.9rem; }
-        .perk i { color: var(--gold); display: block; margin-bottom: 10px; font-size: 1.5rem; }
-
-        /* TOURISME */
-        .tourisme-box {
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('senegal-bg.jpg'); /* Image du Sénégal en fond */
-            background-size: cover;
-            padding: 60px;
+            background: rgba(212, 175, 55, 0.1);
+            padding: 40px;
+            margin: 60px 0;
             border: 1px solid var(--gold);
-            margin-top: 50px;
         }
+        .perk-item { text-align: center; max-width: 200px; font-size: 0.9rem; }
 
-        /* RÉDUCTIONS */
-        .promo-banner {
-            background: var(--gold);
-            color: black;
-            padding: 15px;
-            text-align: center;
-            font-weight: bold;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-        }
-
-        /* FOOTER */
+        /* FOOTER & RÉSEAUX */
         footer {
-            background: #000;
-            padding: 80px 5% 40px;
-            border-top: 1px solid var(--gold);
             text-align: center;
+            padding: 60px 20px;
+            border-top: 1px solid var(--gold);
+            background: black;
         }
+        .socials { margin: 30px 0; }
+        .socials a { color: white; margin: 0 15px; text-decoration: none; font-size: 0.8rem; border: 1px solid var(--gold); padding: 10px 15px; }
+        .socials a:hover { background: var(--gold); color: black; }
 
-        .social-links { margin: 30px 0; }
-        .social-links a {
-            color: white;
-            text-decoration: none;
-            border: 1px solid var(--gold);
-            padding: 10px 20px;
-            margin: 0 10px;
-            font-size: 0.8rem;
-            transition: 0.3s;
-        }
-        .social-links a:hover { background: var(--gold); color: black; }
-
-        .contact-info { margin-top: 30px; color: var(--gold); }
-
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            nav ul { display: none; } /* On cache le menu sur mobile pour plus de propreté */
+            nav ul { display: none; }
+            .hero { background-size: 90%; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo-text">DAKAR ELITE DRIVER</div>
+        <div class="logo-nav">DAKAR ELITE DRIVER</div>
         <ul>
-            <li><a href="#flotte">NOTRE FLOTTE</a></li>
-            <li><a href="#services">SERVICES</a></li>
+            <li><a href="#tarifs">TARIFS</a></li>
             <li><a href="#tourisme">TOURISME</a></li>
             <li><a href="#contact">CONTACT</a></li>
         </ul>
@@ -184,99 +156,49 @@
 
     <header class="hero">
         <h1>DAKAR ELITE DRIVER</h1>
-        <p>Luxe • Sécurité • Prestige</p>
-        <a href="https://wa.me/221770000000" class="btn-booking" style="margin-top: 30px;">Réserver un chauffeur</a>
+        <p>L'excellence en mouvement</p>
+        <a href="https://wa.me/221770000000" class="btn-wa">RÉSERVER VOTRE VTC</a>
     </header>
 
-    <div id="flotte" class="container">
-        <div class="promo-banner">🔥 RÉDUCTION DE 10% À PARTIR DE 10 JOURS DE LOCATION</div>
+    <div id="tarifs" class="container">
+        <h2 class="section-title">Nos Prestations</h2>
         
-        <h2 class="section-title">VTC & Location Haut de Gamme</h2>
-        
+        <div style="background: var(--gold); color: black; padding: 15px; text-align: center; font-weight: bold; margin-bottom: 30px;">
+            💎 -10% DE RÉDUCTION À PARTIR DE 10 JOURS DE LOCATION
+        </div>
+
         <div class="grid">
             <div class="card">
-                <img src="4x4-prestige.jpg" alt="VTC 4x4 Dakar" class="card-img">
-                <div class="card-content">
-                    <h3>VTC 4X4 (Ford / Hyundai)</h3>
-                    <p>Modèles Ford Expedition ou Hyundai Palisade. Idéal pour VIP et délégations.</p>
-                    <div class="price">70 000 <span>CFA / JOUR</span></div>
-                    <ul style="font-size: 0.8rem; padding-left: 15px;">
-                        <li>Chauffeur bilingue (Français/Anglais)</li>
-                        <li>Wi-Fi & Boissons fraîches inclus</li>
-                        <li>Chauffeur cultivé (Guide région)</li>
-                    </ul>
-                    <a href="https://wa.me/221770000000?text=Je souhaite réserver un VTC 4x4" class="btn-booking">Réserver</a>
-                </div>
+                <h3>VTC 4x4 LUXE</h3>
+                <p>Ford Expedition / Hyundai Palisade</p>
+                <div class="price">70 000 <span>FCFA / JOURNÉE</span></div>
+                <p>✓ Chauffeur bilingue & cultivé<br>✓ Wifi & Boissons fraîches</p>
+                <a href="https://wa.me/221770000000" class="btn-wa" style="padding: 10px 20px;">Choisir</a>
             </div>
 
             <div class="card">
-                <img src="berline-luxe.jpg" alt="VTC 4x2 Dakar" class="card-img">
-                <div class="card-content">
-                    <h3>VTC 4X2 & BERLINE</h3>
-                    <p>Confort Premium pour vos trajets urbains et transferts AIBD.</p>
-                    <div class="price">50 000 <span>CFA / JOUR</span></div>
-                    <ul style="font-size: 0.8rem; padding-left: 15px;">
-                        <li>Climatisation intégrale</li>
-                        <li>Service ponctuel et discret</li>
-                        <li>Eau minérale à bord</li>
-                    </ul>
-                    <a href="https://wa.me/221770000000?text=Je souhaite réserver un VTC Berline" class="btn-booking">Réserver</a>
-                </div>
+                <h3>VTC CONFORT</h3>
+                <p>Berlines Premium / Ford / Hyundai</p>
+                <div class="price">50 000 <span>FCFA / JOURNÉE</span></div>
+                <p>✓ Climatisation bi-zone<br>✓ Transferts VIP AIBD</p>
+                <a href="https://wa.me/221770000000" class="btn-wa" style="padding: 10px 20px;">Choisir</a>
             </div>
 
             <div class="card">
-                <img src="vente-auto.jpg" alt="Vente voiture luxe" class="card-img">
-                <div class="card-content">
-                    <h3>VENTE & IMPORTATION</h3>
-                    <p>Besoin d'un véhicule haut de gamme ? Nous gérons l'import et la vente.</p>
-                    <div class="price">SUR DEVIS</div>
-                    <p style="font-size: 0.8rem;">Marques disponibles : Ford, Hyundai, Toyota, Range Rover.</p>
-                    <a href="https://wa.me/221770000000?text=Demande de devis pour achat voiture" class="btn-booking">Contacter Vente</a>
-                </div>
+                <h3>VENTE AUTO</h3>
+                <p>Import & Vente de Prestige</p>
+                <div class="price">SUR DEVIS <span>TOUTES MARQUES</span></div>
+                <p>✓ Ford, Hyundai, Range Rover<br>✓ Service de dédouanement</p>
+                <a href="https://wa.me/221770000000" class="btn-wa" style="padding: 10px 20px;">Nous contacter</a>
             </div>
         </div>
     </div>
 
-    <div id="services" class="premium-perks">
-        <div class="perk">🌍 <strong>CHAUFFEURS CULTIVÉS</strong><br>Bilingues & experts du Sénégal</div>
-        <div class="perk">📶 <strong>WIFI À BORD</strong><br>Restez connecté en tout temps</div>
-        <div class="perk">🥤 <strong>RAFRAÎCHISSEMENTS</strong><br>Eau et boissons fraîches offertes</div>
-        <div class="perk">🛡️ <strong>SÉCURITÉ MAXIMALE</strong><br>Chauffeurs formés et véhicules récents</div>
+    <div class="perks">
+        <div class="perk-item">📶<br>WIFI GRATUIT</div>
+        <div class="perk-item">🥤<br>BOISSONS FRAÎCHES</div>
+        <div class="perk-item">🎓<br>CHAUFFEURS CULTIVÉS</div>
+        <div class="perk-item">📍<br>TÉLÉGUIDAGE TOURISTIQUE</div>
     </div>
 
-    <div id="tourisme" class="container">
-        <div class="tourisme-box">
-            <h2 style="font-family: 'Cinzel', serif; color: var(--gold);">TOURISME & TÉLÉGUIDAGE</h2>
-            <p>Découvrez le Sénégal avec un regard d'expert. Nos chauffeurs bilingues vous accompagnent pour des visites privées :</p>
-            <ul style="columns: 2;">
-                <li>Île de Gorée</li>
-                <li>Monument de la Renaissance</li>
-                <li>Lac Rose</li>
-                <li>Île de Ngor</li>
-                <li>Saint-Louis & Bandia</li>
-            </ul>
-            <p><strong>Option :</strong> Location simple sans chauffeur disponible selon modèle.</p>
-        </div>
-    </div>
-
-    <footer id="contact">
-        <h2 style="font-family: 'Cinzel', serif; color: var(--gold);">REJOIGNEZ L'ÉLITE</h2>
-        
-        <div class="social-links">
-            <a href="#">INSTAGRAM</a>
-            <a href="#">TIKTOK</a>
-            <a href="#">SNAPCHAT</a>
-            <a href="https://wa.me/221770000000">WHATSAPP</a>
-        </div>
-
-        <div class="contact-info">
-            <p>📍 Dakar, Sénégal</p>
-            <p>📞 +221 77 000 00 00</p>
-            <p>✉️ contact@dakarelitedriver.com</p>
-        </div>
-
-        <p style="font-size: 0.6rem; color: #444; margin-top: 50px;">© 2026 DAKAR ELITE DRIVER. L'EXCELLENCE AU SÉNÉGAL.</p>
-    </footer>
-
-</body>
-</html>
+    <div id="tourisme" class="
