@@ -3,36 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dakar Elite Driver | Prestige & Luxe</title>
+    <title>Dakar Elite Driver | Excellence & Prestige</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Arial', sans-serif; margin: 0; background-color: #0b0b0b; color: #ffffff; text-align: center; }
-        header { padding: 50px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80'); background-size: cover; }
-        h1 { color: #d4af37; font-size: 2.5em; } /* Couleur Or */
-        .services { display: flex; justify-content: space-around; padding: 40px; flex-wrap: wrap; }
-        .card { border: 1px solid #d4af37; padding: 20px; width: 250px; margin: 10px; border-radius: 8px; }
-        .btn { background-color: #d4af37; color: black; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin-top: 20px; }
+        :root {
+            --gold: #D4AF37;
+            --dark-bg: #0a0a0a;
+            --card-bg: #1a1a1a;
+            --white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--white);
+            scroll-behavior: smooth;
+        }
+
+        /* Arrière-plan avec Logo */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                        url('votre-logo.png') no-repeat center; /* Remplacez par votre logo */
+            background-size: contain;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--gold); margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; max-width: 800px; line-height: 1.6; }
+
+        .container { max-width: 1200px; margin: auto; padding: 60px 20px; }
+
+        /* Section Tarifs */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { 
+            background: var(--card-bg); 
+            padding: 30px; 
+            border-radius: 15px; 
+            border: 1px solid #333; 
+            transition: 0.3s;
+            position: relative;
+        }
+        .card:hover { border-color: var(--gold); transform: translateY(-10px); }
+        .price { font-size: 2rem; color: var(--gold); font-weight: bold; margin: 20px 0; }
+        .tag { background: var(--gold); color: black; padding: 5px 10px; font-size: 0.8rem; border-radius: 5px; position: absolute; top: 20px; right: 20px; }
+
+        /* Services Inclus */
+        .features { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+        .feature-item { font-size: 0.9rem; background: #333; padding: 8px 15px; border-radius: 20px; }
+
+        /* Réduction */
+        .promo-banner { background: var(--gold); color: black; padding: 20px; text-align: center; font-weight: bold; margin: 40px 0; border-radius: 10px; }
+
+        /* Tourisme */
+        .tourisme { background: #111; padding: 40px; border-radius: 15px; border-left: 5px solid var(--gold); }
+
+        /* Footer & Social */
+        footer { padding: 60px 20px; text-align: center; background: #000; border-top: 1px solid #222; }
+        .social-links a { color: var(--white); text-decoration: none; margin: 0 15px; font-size: 1.5rem; transition: 0.3s; }
+        .social-links a:hover { color: var(--gold); }
+        .cta-btn { 
+            background: var(--gold); color: black; padding: 15px 40px; 
+            text-decoration: none; border-radius: 30px; font-weight: bold; 
+            display: inline-block; margin-top: 20px;
+        }
+
+        @media (max-width: 768px) { h1 { font-size: 2.2rem; } }
     </style>
 </head>
 <body>
-    <header>
-        <h1>DAKAR ELITE DRIVER</h1>
-        <p>L'excellence du service VTC et de l'automobile de prestige au Sénégal.</p>
-        <a href="https://wa.me/VOTRE_NUMERO" class="btn">Réserver sur WhatsApp</a>
-    </header>
 
-    <section class="services">
-        <div class="card">
-            <h3>🚗 Service VTC</h3>
-            <p>Transferts AIBD et déplacements VIP en toute discrétion.</p>
+    <section class="hero">
+        <h1>DAKAR ELITE DRIVER</h1>
+        <p>Luxe, Sécurité et Culture. Découvrez le Sénégal avec nos chauffeurs bilingues experts et cultivés.</p>
+        <div class="features">
+            <span class="feature-item">📶 Wi-Fi Inclus</span>
+            <span class="feature-item">🍹 Boissons Fraîches</span>
+            <span class="feature-item">❄️ Climatisation</span>
         </div>
-        <div class="card">
-            <h3>🔑 Location Luxe</h3>
-            <p>Berlines et SUV de prestige pour vos événements.</p>
-        </div>
-        <div class="card">
-            <h3>💎 Vente Privée</h3>
-            <p>Achat et vente de véhicules haut de gamme sélectionnés.</p>
-        </div>
+        <a href="#contact" class="cta-btn">Réserver maintenant</a>
     </section>
+
+    <div class="container">
+        <h2 style="text-align: center; color: var(--gold);">Nos Tarifs VTC Premium</h2>
+        
+        <div class="promo-banner">
+            🎁 OFFRE SPÉCIALE : -10% de réduction à partir de 10 jours de location !
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <span class="tag">Le plus demandé</span>
+                <h3>VTC Luxe 4x4</h3>
+                <p>Modèles : Ford Expedition, Hyundai Palisade ou similaire.</p>
+                <div class="price">70 000 FCFA <small>/ Journée</small></div>
+                <ul>
+                    <li>Chauffeur bilingue & cultivé</li>
+                    <li>Zone : Dakar & Banlieue</li>
+                    <li>Eau fraîche & Wi-Fi à bord</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>VTC Confort 4x2</h3>
+                <p>Modèles : Hyundai Tucson, Ford Fusion, Berlines Premium.</p>
+                <div class="price">50 000 FCFA <small>/ Journée</small></div>
+                <ul>
+                    <li>Chauffeur professionnel</li>
+                    <li>Confort optimal</li>
+                    <li>Idéal pour déplacements d'affaires</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Vente & Location Simple</h3>
+                <p>Location sans chauffeur ou achat direct.</p>
+                <p>Tarifs selon modèle (Ford, Hyundai, Range Rover, etc.)</p>
+                <a href="https://wa.me/VOTRE_NUMERO" style="color: var(--gold);">Demander un devis →</a>
+            </div>
+        </div>
+
+        <section class="tourisme" style="margin-top: 60px;">
+            <h2 style="color: var(--gold);">Visites Guidées & Teleguidage</h2>
+            <p>Nos chauffeurs ne sont pas que des conducteurs, ce sont vos guides. Explorez l'histoire et la beauté du Sénégal :</p>
+            <ul>
+                <li>🏝️ <strong>Île de Gorée :</strong> Assistance et transfert vers l'embarcadère.</li>
+                <li>🇸🇳 <strong>Monument de la Renaissance :</strong> Visite commentée.</li>
+                <li>🌊 <strong>Plages de Ngor :</strong> Détente et gastronomie locale.</li>
+                <li>🌍 <strong>Hors Dakar :</strong> Excursions sur mesure (Lac Rose, Bandia, Saint-Louis).</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer id="contact">
+        <h2>Contactez l'Élite</h2>
+        <p>Dakar, Sénégal | Disponible 24h/7j</p>
+        <div class="social-links">
+            <a href="https://wa.me/VOTRE_NUMERO">WhatsApp</a>
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+            <a href="#">Snapchat</a>
+        </div>
+        <br>
+        <p>© 2026 Dakar Elite Driver - Excellence en Mouvement.</p>
+    </footer>
+
 </body>
 </html>
