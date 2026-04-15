@@ -6,12 +6,10 @@
 
 <title>Dakar Elite Driver | VTC Premium Sénégal</title>
 
-<meta name="description" content="Dakar Elite Driver - VTC premium à Dakar. Chauffeurs VIP, location de voiture avec ou sans chauffeur, transfert aéroport AIBD, service 24/7.">
-<meta name="keywords" content="VTC Dakar, chauffeur privé Sénégal, location voiture Dakar, transfert aéroport AIBD, Dakar Elite Driver">
-
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
 --gold:#D4AF37;
 --black:#050505;
@@ -26,14 +24,13 @@ color:white;
 
 header{
 text-align:center;
-padding:60px 20px;
-background:linear-gradient(to bottom, #000, #111);
+padding:50px 20px;
+border-bottom:1px solid var(--gold);
 }
 
 h1{
 font-family:Cinzel;
 color:var(--gold);
-font-size:40px;
 }
 
 nav{
@@ -41,7 +38,7 @@ display:flex;
 justify-content:center;
 gap:20px;
 padding:15px;
-border-bottom:1px solid var(--gold);
+border-bottom:1px solid #222;
 }
 
 nav a{
@@ -50,42 +47,52 @@ text-decoration:none;
 font-weight:bold;
 }
 
-section{
-padding:40px 20px;
+.container{
 max-width:1100px;
 margin:auto;
+padding:30px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
 .card{
 border:1px solid #333;
 padding:20px;
-margin:15px 0;
-border-radius:10px;
+cursor:pointer;
 transition:0.3s;
 }
 
 .card:hover{
 border-color:var(--gold);
-transform:scale(1.02);
+transform:scale(1.03);
+}
+
+.price{
+color:var(--gold);
+font-weight:bold;
+margin-top:10px;
 }
 
 .btn{
 background:var(--gold);
 color:black;
 padding:15px;
-border:none;
 width:100%;
-font-weight:bold;
+border:none;
 cursor:pointer;
+font-weight:bold;
 margin-top:10px;
 }
 
-input, select{
+input,select{
 width:100%;
 padding:12px;
 margin:8px 0;
 border:none;
-border-radius:5px;
 }
 
 footer{
@@ -94,6 +101,44 @@ padding:30px;
 border-top:1px solid #222;
 color:#777;
 }
+
+/* MODAL */
+.modal{
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.85);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.modal-content{
+background:#111;
+border:1px solid var(--gold);
+padding:25px;
+width:90%;
+max-width:500px;
+position:relative;
+}
+
+.close{
+position:absolute;
+top:10px;
+right:15px;
+cursor:pointer;
+color:var(--gold);
+font-size:20px;
+}
+
+.admin{
+background:#0d0d0d;
+padding:20px;
+margin-top:40px;
+border:1px solid #222;
+}
+
 </style>
 
 </head>
@@ -102,117 +147,165 @@ color:#777;
 
 <header>
 <h1>DAKAR ELITE DRIVER</h1>
-<p>VTC Premium • Location • Chauffeur VIP • 24/7 Sénégal</p>
+<p>VTC Premium • Location • VIP Sénégal</p>
 </header>
 
 <nav>
 <a href="#services">Services</a>
-<a href="#reservation">Réservation</a>
-<a href="#contact">Contact</a>
+<a href="#reservation">Réserver</a>
+<a href="#admin">Admin</a>
 </nav>
 
 <!-- SERVICES -->
-<section id="services">
-<h2>Nos Services Premium</h2>
+<section class="container" id="services">
 
-<div class="card">
-<h3>VTC avec chauffeur</h3>
-<p>Déplacements professionnels, particuliers et tourisme.</p>
+<h2 style="color:var(--gold);font-family:Cinzel;">Nos Services</h2>
+
+<div class="grid">
+
+<div class="card" onclick="openModal('VTC AVEC CHAUFFEUR','Service premium avec chauffeur bilingue, discret et professionnel. Déplacements Dakar + Sénégal.')">
+<h3>VTC Chauffeur</h3>
+<div class="price">90 000 FCFA / JOUR</div>
 </div>
 
-<div class="card">
-<h3>Location sans chauffeur</h3>
-<p>Véhicules disponibles à la journée ou longue durée.</p>
+<div class="card" onclick="openModal('LOCATION SANS CHAUFFEUR','Location de voiture propre et fiable sans chauffeur. Liberté totale.')">
+<h3>Location Simple</h3>
+<div class="price">SUR DEMANDE</div>
 </div>
 
-<div class="card">
-<h3>Transfert Aéroport VIP</h3>
-<p>Accueil personnalisé AIBD avec confort premium.</p>
+<div class="card" onclick="openModal('TRANSFERT AÉROPORT VIP','Accueil AIBD avec pancarte + assistance bagages + confort premium.')">
+<h3>Aéroport VIP</h3>
+<div class="price">25 000 FCFA+</div>
 </div>
 
-<div class="card">
-<h3>Service Business & Événements</h3>
-<p>Mariage, entreprise, tourisme de luxe.</p>
+<div class="card" onclick="openModal('SERVICE BUSINESS','Mise à disposition pour entreprises, hôtels et VIP.')">
+<h3>Business</h3>
+<div class="price">SUR DEVIS</div>
+</div>
+
 </div>
 </section>
 
 <!-- RESERVATION -->
-<section id="reservation">
+<section class="container" id="reservation">
 
-<h2>Réservation Instantanée</h2>
+<h2 style="color:var(--gold);font-family:Cinzel;">Réservation</h2>
 
 <div class="card">
 
-<input type="text" id="nom" placeholder="Nom complet">
-<input type="tel" id="phone" placeholder="Numéro WhatsApp">
+<input id="nom" placeholder="Nom complet">
+<input id="phone" placeholder="WhatsApp">
+<input id="depart" placeholder="Adresse départ">
+<input id="dest" placeholder="Destination">
 
 <select id="service">
-<option>VTC avec chauffeur</option>
+<option>VTC Chauffeur</option>
 <option>Location sans chauffeur</option>
-<option>Transfert aéroport</option>
-<option>Service VIP</option>
+<option>Aéroport VIP</option>
+<option>Business</option>
 </select>
 
-<input type="text" id="depart" placeholder="Adresse de départ">
-<input type="text" id="destination" placeholder="Destination">
-
 <button class="btn" onclick="reserver()">Réserver sur WhatsApp</button>
+
+<button class="btn" style="background:white;color:black;" onclick="payer()">Payer Wave / Orange Money</button>
 
 </div>
 
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-<h2>Contact</h2>
+<!-- ADMIN -->
+<section class="container" id="admin">
 
-<div class="card">
-<p>📍 Dakar, Sénégal</p>
-<p>📞 +221 77 095 37 66</p>
-<p>📞 +221 76 903 87 55</p>
-<p>✉️ dakarelitedriver@gmail.com</p>
+<h2 style="color:var(--gold);font-family:Cinzel;">Dashboard Réservations</h2>
+
+<div class="admin" id="adminPanel">
+Aucune réservation pour le moment
 </div>
 
 </section>
 
 <footer>
-© 2026 Dakar Elite Driver - Service VTC Premium Sénégal
+© 2026 Dakar Elite Driver
 </footer>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal()">✖</span>
+<h2 id="title"></h2>
+<p id="text"></p>
+</div>
+</div>
 
 <script>
 
-// SYSTEME RESERVATION WHATSAPP + STOCK LOCAL
+// MODAL
+function openModal(t, txt){
+document.getElementById("modal").style.display="flex";
+document.getElementById("title").innerText=t;
+document.getElementById("text").innerText=txt;
+}
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
 
+// RESERVATION WHATSAPP
 function reserver(){
 
-let nom = document.getElementById("nom").value;
-let phone = document.getElementById("phone").value;
-let service = document.getElementById("service").value;
-let depart = document.getElementById("depart").value;
-let destination = document.getElementById("destination").value;
-
-// sauvegarde locale
 let data = {
-nom, phone, service, depart, destination,
-date: new Date().toLocaleString()
+nom:nom.value,
+phone:phone.value,
+depart:depart.value,
+dest:dest.value,
+service:service.value,
+date:new Date().toLocaleString()
 };
 
-let old = JSON.parse(localStorage.getItem("reservations") || "[]");
-old.push(data);
-localStorage.setItem("reservations", JSON.stringify(old));
+let list = JSON.parse(localStorage.getItem("res")||"[]");
+list.push(data);
+localStorage.setItem("res",JSON.stringify(list));
 
-// message whatsapp
 let msg =
-"🚘 Nouvelle réservation Dakar Elite Driver%0A" +
-"Nom: " + nom + "%0A" +
-"Tel: " + phone + "%0A" +
-"Service: " + service + "%0A" +
-"Départ: " + depart + "%0A" +
-"Destination: " + destination;
+"Nouvelle réservation%0A" +
+"Nom:"+data.nom+"%0A" +
+"Tel:"+data.phone+"%0A" +
+"Service:"+data.service+"%0A" +
+"Départ:"+data.depart+"%0A" +
+"Destination:"+data.dest;
 
-window.open("https://wa.me/221770953766?text=" + msg);
+window.open("https://wa.me/221770953766?text="+msg);
 
+loadAdmin();
 }
+
+// PAIEMENT
+function payer(){
+alert("Paiement Wave / Orange Money à intégrer ensuite (je peux te le coder)");
+}
+
+// ADMIN PANEL
+function loadAdmin(){
+
+let list = JSON.parse(localStorage.getItem("res")||"[]");
+
+let html = "";
+
+list.slice().reverse().forEach(r=>{
+html += `
+<div style="border-bottom:1px solid #333;padding:10px;">
+<b>${r.nom}</b><br>
+${r.phone}<br>
+${r.service}<br>
+${r.depart} → ${r.dest}<br>
+<small>${r.date}</small>
+</div>`;
+});
+
+document.getElementById("adminPanel").innerHTML =
+html || "Aucune réservation";
+}
+
+loadAdmin();
 
 </script>
 
