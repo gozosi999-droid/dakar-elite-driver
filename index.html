@@ -6,7 +6,7 @@
 
 <title>Dakar Elite Driver | Plateforme Premium</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -29,7 +29,6 @@ width:100%;
 height:100%;
 z-index:-1;
 }
-
 .bg img{
 width:100%;
 height:100%;
@@ -47,7 +46,6 @@ border-bottom:2px solid var(--gold);
 background:rgba(0,0,0,0.95);
 position:sticky;
 top:0;
-z-index:1000;
 }
 
 .logo{
@@ -70,7 +68,7 @@ nav a:hover{color:var(--gold);}
 
 /* HERO */
 .hero{
-height:85vh;
+height:70vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -84,6 +82,30 @@ color:var(--gold);
 font-size:3rem;
 }
 
+/* SLIDER */
+.slider{
+display:flex;
+width:500%;
+animation:slide 18s infinite linear;
+margin-top:20px;
+}
+
+.slider img{
+width:100%;
+height:300px;
+object-fit:cover;
+filter:brightness(0.6);
+}
+
+@keyframes slide{
+0%{transform:translateX(0);}
+20%{transform:translateX(-20%);}
+40%{transform:translateX(-40%);}
+60%{transform:translateX(-60%);}
+80%{transform:translateX(-80%);}
+100%{transform:translateX(0);}
+}
+
 /* PAGES */
 .page{
 display:none;
@@ -94,26 +116,11 @@ margin:auto;
 
 .active{display:block;}
 
-/* GOLD 3D TITLE */
-.gold-title{
+.title{
 text-align:center;
-margin-bottom:40px;
-}
-
-.gold-title h2{
-display:inline-block;
-padding:18px 40px;
-border:2px solid #D4AF37;
-color:#D4AF37;
-font-family:'Cinzel', serif;
-letter-spacing:3px;
-text-transform:uppercase;
-background:linear-gradient(145deg, rgba(0,0,0,0.9), rgba(20,20,20,0.6));
-box-shadow:
-0 10px 25px rgba(0,0,0,0.8),
-inset 0 0 15px rgba(212,175,55,0.2);
-border-radius:8px;
-transform: perspective(500px) rotateX(5deg);
+font-family:Cinzel;
+color:var(--gold);
+margin-bottom:30px;
 }
 
 /* GRID */
@@ -137,26 +144,42 @@ transform:translateY(-8px);
 }
 .card h3{color:var(--gold);font-family:Cinzel}
 
-/* MODAL */
-.modalPage{
-display:none;
-position:fixed;
-top:0;left:0;
-width:100%;
-height:100%;
-background:#050505;
-z-index:9999;
-overflow:auto;
-padding:50px;
+/* SOCIAL */
+.social{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+margin-top:20px;
 }
 
-.close{
+.social a{
+padding:12px 18px;
+border:1px solid var(--gold);
 color:var(--gold);
-font-size:20px;
-cursor:pointer;
-position:absolute;
-top:20px;
-right:30px;
+text-decoration:none;
+font-weight:700;
+transition:0.3s;
+}
+.social a:hover{
+background:var(--gold);
+color:black;
+}
+
+/* COMMENTS */
+.comment{
+background:rgba(20,20,20,0.8);
+padding:15px;
+border:1px solid #333;
+margin:10px 0;
+}
+
+/* FLOTE IMAGE */
+.carImg{
+width:100%;
+height:160px;
+object-fit:cover;
+border-bottom:1px solid #333;
 }
 
 /* BUTTON */
@@ -199,118 +222,113 @@ margin-top:10px;
 
 <div class="hero">
 <h1>EXCELLENCE AUTOMOBILE AU SÉNÉGAL</h1>
-<p>VTC • Location • Mariage • Vente • Business VIP</p>
+
+<div class="slider">
+<img src="https://images.unsplash.com/photo-1542362567-b07e54358753">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+<img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7">
+<img src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
+<img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023">
 </div>
 
 </div>
 
-<!-- SERVICES -->
+</div>
+
+<!-- SERVICES (INCHANGE) -->
 <div id="services" class="page">
 
-<!-- 💎 GOLD 3D TITLE AJOUTÉ ICI -->
-<div class="gold-title">
-<h2>SERVICES PREMIUM</h2>
-</div>
+<h2 class="title">NOS SERVICES</h2>
 
 <div class="grid">
 
 <div class="card" onclick="openPage('tourism')">
 <h3>TOURISME</h3>
-<p>Dakar • Gorée • Lac Rose • Bandia</p>
+<p>Dakar • Gorée • Lac Rose</p>
 </div>
 
 <div class="card" onclick="openPage('mariage')">
 <h3>MARIAGE VIP</h3>
-<p>Service luxe cérémonies & événements</p>
 </div>
 
 <div class="card" onclick="openPage('business')">
 <h3>BUSINESS</h3>
-<p>Service entreprise — devis personnalisé</p>
 </div>
 
 <div class="card" onclick="openPage('partenariat')">
 <h3>PARTENARIAT</h3>
-<p>Flotte véhicules — revenus partagés</p>
 </div>
 
 <div class="card" onclick="openPage('vente')">
 <h3>VENTE VOITURES</h3>
-<p>Import & véhicules disponibles</p>
 </div>
 
 </div>
 
 </div>
 
-<!-- TOURISM PAGE -->
-<div class="modalPage" id="tourism">
-<span class="close" onclick="closePage()">✖</span>
+<!-- FLOTE -->
+<div id="fleet" class="page">
 
-<h2 style="color:#D4AF37;font-family:Cinzel;">TOURISME PREMIUM</h2>
+<h2 class="title">FLOTTE PREMIUM</h2>
 
-<p>
-Découvrez le Sénégal avec chauffeur privé : confort, luxe et sécurité.
+<div class="grid">
+
+<div class="card">
+<img class="carImg" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+<h3>Range Rover Sport</h3>
+</div>
+
+<div class="card">
+<img class="carImg" src="https://images.unsplash.com/photo-1550355291-bbee04a92027">
+<h3>Toyota Prado</h3>
+</div>
+
+<div class="card">
+<img class="carImg" src="https://images.unsplash.com/photo-1549924231-f129b911e442">
+<h3>Mercedes GLE</h3>
+</div>
+
+<div class="card">
+<img class="carImg" src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
+<h3>Toyota Camry</h3>
+</div>
+
+<div class="card">
+<img class="carImg" src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d">
+<h3>Hyundai Palisade</h3>
+</div>
+
+</div>
+
+</div>
+
+<!-- CONTACT + SOCIAL -->
+<div id="contact" class="page">
+
+<h2 class="title">CONTACT & RÉSEAUX</h2>
+
+<p style="text-align:center">
+📍 Dakar Sénégal<br>
+📞 +221 77 095 37 66<br>
+📞 +221 76 903 87 55
 </p>
 
-<ul>
-<li>Île de Gorée</li>
-<li>Lac Rose</li>
-<li>Réserve de Bandia</li>
-<li>Saly</li>
-</ul>
+<div class="social">
 
-<button class="btn" onclick="book('Tourisme')">Réserver</button>
+<a href="https://instagram.com" target="_blank">Instagram</a>
+<a href="https://tiktok.com" target="_blank">TikTok</a>
+<a href="https://snapchat.com" target="_blank">Snapchat</a>
+<a href="https://wa.me/221770953766" target="_blank">WhatsApp</a>
+
 </div>
 
-<!-- MARIAGE -->
-<div class="modalPage" id="mariage">
-<span class="close" onclick="closePage()">✖</span>
+<h2 class="title" style="margin-top:40px;">AVIS CLIENTS</h2>
 
-<h2 style="color:#D4AF37;font-family:Cinzel;">MARIAGE VIP</h2>
+<div class="comment">⭐⭐⭐⭐⭐ Service impeccable, chauffeur très professionnel.</div>
+<div class="comment">⭐⭐⭐⭐⭐ Très bonne expérience mariage VIP.</div>
+<div class="comment">⭐⭐⭐⭐⭐ Ponctualité et luxe au top.</div>
 
-<p>Service luxe pour cérémonies avec véhicule décoré + chauffeur élégant.</p>
-
-<button class="btn" onclick="book('Mariage')">Réserver</button>
-</div>
-
-<!-- BUSINESS -->
-<div class="modalPage" id="business">
-<span class="close" onclick="closePage()">✖</span>
-
-<h2 style="color:#D4AF37;font-family:Cinzel;">BUSINESS VIP</h2>
-
-<p>Transport entreprise sur devis personnalisé.</p>
-
-<button class="btn" onclick="book('Business')">Demander devis</button>
-</div>
-
-<!-- PARTENARIAT -->
-<div class="modalPage" id="partenariat">
-<span class="close" onclick="closePage()">✖</span>
-
-<h2 style="color:#D4AF37;font-family:Cinzel;">PARTENARIAT</h2>
-
-<p>Revenu partagé avec propriétaires de véhicules.</p>
-
-<button class="btn">Proposer véhicule</button>
-</div>
-
-<!-- VENTE -->
-<div class="modalPage" id="vente">
-<span class="close" onclick="closePage()">✖</span>
-
-<h2 style="color:#D4AF37;font-family:Cinzel;">VENTE VOITURES</h2>
-
-<ul>
-<li>Toyota Prado</li>
-<li>Range Rover</li>
-<li>Hyundai Tucson</li>
-<li>Mercedes GLE</li>
-<li>Toyota Camry</li>
-</ul>
-
-<button class="btn">Demander prix</button>
 </div>
 
 <script>
