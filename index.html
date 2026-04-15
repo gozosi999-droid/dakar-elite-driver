@@ -3,89 +3,179 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dakar Elite Driver | Officiel</title>
 
-<title>Dakar Elite Driver | VTC Premium Sénégal</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
+:root { --gold:#D4AF37; --black:#050505; }
 
-:root{
---gold:#D4AF37;
---black:#050505;
-}
+*{box-sizing:border-box;scroll-behavior:smooth;}
 
 body{
 margin:0;
-font-family:Montserrat;
 background:var(--black);
 color:white;
+font-family:'Montserrat',sans-serif;
+overflow-x:hidden;
 }
 
-header{
-text-align:center;
-padding:50px 20px;
-border-bottom:1px solid var(--gold);
+/* BACKGROUND */
+.video-bg{
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+z-index:-1;
+}
+.video-bg img{
+width:100%;height:100%;
+object-fit:cover;
+filter:brightness(0.25);
 }
 
-h1{
-font-family:Cinzel;
-color:var(--gold);
-}
-
+/* NAV */
 nav{
 display:flex;
-justify-content:center;
-gap:20px;
-padding:15px;
-border-bottom:1px solid #222;
+justify-content:space-between;
+align-items:center;
+padding:10px 5%;
+border-bottom:2px solid var(--gold);
+background:rgba(0,0,0,0.95);
+position:sticky;
+top:0;
+z-index:1000;
+}
+.logo-area{
+display:flex;
+align-items:center;
+gap:10px;
+}
+.logo-area img{height:55px;}
+.logo-area span{
+color:var(--gold);
+font-family:Cinzel;
 }
 
+nav ul{
+display:flex;
+list-style:none;
+gap:20px;
+}
 nav a{
 color:white;
 text-decoration:none;
-font-weight:bold;
+font-weight:700;
+}
+nav a:hover{color:var(--gold);}
+
+/* HERO */
+.hero{
+height:85vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+.hero h1{
+font-family:Cinzel;
+color:var(--gold);
+font-size:clamp(2rem,6vw,4rem);
+margin:0;
+}
+.hero p{
+letter-spacing:5px;
+text-transform:uppercase;
 }
 
+/* MAIN */
+.main-wrapper{
+background:rgba(0,0,0,0.92);
+border-top:1px solid var(--gold);
+}
 .container{
-max-width:1100px;
+max-width:1300px;
 margin:auto;
-padding:30px;
+padding:60px 5%;
 }
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
 }
 
+/* CARDS */
 .card{
-border:1px solid #333;
-padding:20px;
+background:rgba(20,20,20,0.8);
+border:1px solid #222;
+padding:35px;
 cursor:pointer;
-transition:0.3s;
+transition:0.4s;
 }
-
 .card:hover{
 border-color:var(--gold);
-transform:scale(1.03);
+transform:translateY(-10px);
+}
+
+.card h3{
+font-family:Cinzel;
+color:var(--gold);
 }
 
 .price{
-color:var(--gold);
-font-weight:bold;
-margin-top:10px;
+font-size:1.6rem;
+font-weight:800;
+margin:15px 0;
 }
 
+/* BUTTON */
 .btn{
 background:var(--gold);
 color:black;
 padding:15px;
 width:100%;
 border:none;
+font-weight:800;
 cursor:pointer;
-font-weight:bold;
 margin-top:10px;
+text-transform:uppercase;
+}
+.btn:hover{background:white;}
+
+/* MODAL */
+.modal{
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.8);
+z-index:9999;
+justify-content:center;
+align-items:center;
+}
+.modal-content{
+background:#111;
+border:1px solid var(--gold);
+padding:30px;
+max-width:500px;
+width:90%;
+position:relative;
+}
+.close{
+position:absolute;
+top:10px;
+right:15px;
+cursor:pointer;
+color:var(--gold);
+}
+
+/* ADMIN */
+.admin{
+margin-top:40px;
+border:1px solid #222;
+padding:20px;
+background:#0d0d0d;
 }
 
 input,select{
@@ -97,99 +187,72 @@ border:none;
 
 footer{
 text-align:center;
-padding:30px;
-border-top:1px solid #222;
-color:#777;
+padding:40px;
+color:#444;
+border-top:1px solid #111;
 }
-
-/* MODAL */
-.modal{
-display:none;
-position:fixed;
-top:0;left:0;
-width:100%;height:100%;
-background:rgba(0,0,0,0.85);
-justify-content:center;
-align-items:center;
-z-index:9999;
-}
-
-.modal-content{
-background:#111;
-border:1px solid var(--gold);
-padding:25px;
-width:90%;
-max-width:500px;
-position:relative;
-}
-
-.close{
-position:absolute;
-top:10px;
-right:15px;
-cursor:pointer;
-color:var(--gold);
-font-size:20px;
-}
-
-.admin{
-background:#0d0d0d;
-padding:20px;
-margin-top:40px;
-border:1px solid #222;
-}
-
 </style>
-
 </head>
 
 <body>
 
-<header>
-<h1>DAKAR ELITE DRIVER</h1>
-<p>VTC Premium • Location • VIP Sénégal</p>
-</header>
+<div class="video-bg">
+<img src="fond-luxe.jpg">
+</div>
 
 <nav>
-<a href="#services">Services</a>
-<a href="#reservation">Réserver</a>
-<a href="#admin">Admin</a>
+<div class="logo-area">
+<img src="logo.png">
+<span>DAKAR ELITE DRIVER</span>
+</div>
+<ul>
+<li><a href="#services">SERVICES</a></li>
+<li><a href="#reservation">RÉSERVATION</a></li>
+<li><a href="#admin">ADMIN</a></li>
+</ul>
 </nav>
 
-<!-- SERVICES -->
-<section class="container" id="services">
+<header class="hero">
+<p>Prestige • Sécurité • Excellence</p>
+<h1>L'EXCELLENCE AUTOMOBILE AU SÉNÉGAL</h1>
+</header>
 
-<h2 style="color:var(--gold);font-family:Cinzel;">Nos Services</h2>
+<div class="main-wrapper">
+
+<!-- SERVICES -->
+<div id="services" class="container">
+
+<h2 style="color:var(--gold);font-family:Cinzel;text-align:center;">NOS SERVICES</h2>
 
 <div class="grid">
 
-<div class="card" onclick="openModal('VTC AVEC CHAUFFEUR','Service premium avec chauffeur bilingue, discret et professionnel. Déplacements Dakar + Sénégal.')">
-<h3>VTC Chauffeur</h3>
+<div class="card" onclick="openModal('VTC AVEC CHAUFFEUR','Service premium avec chauffeur bilingue, discret et professionnel à Dakar et partout au Sénégal.')">
+<h3>VTC PRESTIGE</h3>
 <div class="price">90 000 FCFA / JOUR</div>
 </div>
 
-<div class="card" onclick="openModal('LOCATION SANS CHAUFFEUR','Location de voiture propre et fiable sans chauffeur. Liberté totale.')">
-<h3>Location Simple</h3>
+<div class="card" onclick="openModal('LOCATION SANS CHAUFFEUR','Location de véhicules propres et récents sans chauffeur. Liberté totale.')">
+<h3>LOCATION SIMPLE</h3>
 <div class="price">SUR DEMANDE</div>
 </div>
 
-<div class="card" onclick="openModal('TRANSFERT AÉROPORT VIP','Accueil AIBD avec pancarte + assistance bagages + confort premium.')">
-<h3>Aéroport VIP</h3>
+<div class="card" onclick="openModal('TRANSFERT AÉROPORT VIP','Accueil AIBD avec pancarte, bagages et confort premium.')">
+<h3>AÉROPORT VIP</h3>
 <div class="price">25 000 FCFA+</div>
 </div>
 
-<div class="card" onclick="openModal('SERVICE BUSINESS','Mise à disposition pour entreprises, hôtels et VIP.')">
-<h3>Business</h3>
+<div class="card" onclick="openModal('BUSINESS & ÉVÉNEMENTS','Service VIP pour entreprises, mariages et déplacements privés.')">
+<h3>BUSINESS</h3>
 <div class="price">SUR DEVIS</div>
 </div>
 
 </div>
-</section>
+</div>
 
 <!-- RESERVATION -->
-<section class="container" id="reservation">
+<div id="reservation" class="container">
 
-<h2 style="color:var(--gold);font-family:Cinzel;">Réservation</h2>
+<h2 style="color:var(--gold);font-family:Cinzel;text-align:center;">RÉSERVATION</h2>
 
 <div class="card">
 
@@ -207,26 +270,25 @@ border:1px solid #222;
 
 <button class="btn" onclick="reserver()">Réserver sur WhatsApp</button>
 
-<button class="btn" style="background:white;color:black;" onclick="payer()">Payer Wave / Orange Money</button>
-
 </div>
-
-</section>
+</div>
 
 <!-- ADMIN -->
-<section class="container" id="admin">
+<div id="admin" class="container">
 
-<h2 style="color:var(--gold);font-family:Cinzel;">Dashboard Réservations</h2>
+<h2 style="color:var(--gold);font-family:Cinzel;text-align:center;">DASHBOARD RÉSERVATIONS</h2>
 
-<div class="admin" id="adminPanel">
-Aucune réservation pour le moment
+<div class="admin" id="panel">
+Aucune réservation
 </div>
 
-</section>
+</div>
 
 <footer>
 © 2026 Dakar Elite Driver
 </footer>
+
+</div>
 
 <!-- MODAL -->
 <div class="modal" id="modal">
@@ -240,72 +302,53 @@ Aucune réservation pour le moment
 <script>
 
 // MODAL
-function openModal(t, txt){
-document.getElementById("modal").style.display="flex";
-document.getElementById("title").innerText=t;
-document.getElementById("text").innerText=txt;
+function openModal(t,x){
+modal.style.display="flex";
+title.innerText=t;
+text.innerText=x;
 }
 function closeModal(){
-document.getElementById("modal").style.display="none";
+modal.style.display="none";
 }
 
-// RESERVATION WHATSAPP
+// RESERVATION
 function reserver(){
 
-let data = {
-nom:nom.value,
-phone:phone.value,
-depart:depart.value,
-dest:dest.value,
-service:service.value,
+let data={
+nom,phone,depart,dest,service,
 date:new Date().toLocaleString()
 };
 
-let list = JSON.parse(localStorage.getItem("res")||"[]");
+let list=JSON.parse(localStorage.getItem("r")||"[]");
 list.push(data);
-localStorage.setItem("res",JSON.stringify(list));
+localStorage.setItem("r",JSON.stringify(list));
 
-let msg =
-"Nouvelle réservation%0A" +
-"Nom:"+data.nom+"%0A" +
-"Tel:"+data.phone+"%0A" +
-"Service:"+data.service+"%0A" +
-"Départ:"+data.depart+"%0A" +
-"Destination:"+data.dest;
+let msg=
+"Nouvelle réservation%0A"+
+"Nom:"+nom.value+"%0A"+
+"Tel:"+phone.value+"%0A"+
+"Service:"+service.value+"%0A"+
+"Départ:"+depart.value+"%0A"+
+"Destination:"+dest.value;
 
 window.open("https://wa.me/221770953766?text="+msg);
 
-loadAdmin();
+load();
 }
 
-// PAIEMENT
-function payer(){
-alert("Paiement Wave / Orange Money à intégrer ensuite (je peux te le coder)");
-}
-
-// ADMIN PANEL
-function loadAdmin(){
-
-let list = JSON.parse(localStorage.getItem("res")||"[]");
-
-let html = "";
-
-list.slice().reverse().forEach(r=>{
-html += `
-<div style="border-bottom:1px solid #333;padding:10px;">
+// ADMIN
+function load(){
+let list=JSON.parse(localStorage.getItem("r")||"[]");
+panel.innerHTML=list.length?list.reverse().map(r=>
+`<div style="border-bottom:1px solid #333;padding:10px">
 <b>${r.nom}</b><br>
 ${r.phone}<br>
 ${r.service}<br>
 ${r.depart} → ${r.dest}<br>
 <small>${r.date}</small>
-</div>`;
-});
-
-document.getElementById("adminPanel").innerHTML =
-html || "Aucune réservation";
+</div>`).join(""):"Aucune réservation";
 }
-
-loadAdmin();
+load();
 
 </script>
 
