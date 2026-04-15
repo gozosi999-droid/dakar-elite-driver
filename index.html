@@ -4,197 +4,161 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dakar Elite Driver | Officiel</title>
+<title>Dakar Elite Driver | Plateforme Premium</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
-:root { --gold: #D4AF37; --black: #050505; }
-
-* { box-sizing: border-box; scroll-behavior: smooth; }
-
-body {
-margin: 0;
-padding: 0;
-background: var(--black);
-color: white;
-font-family: 'Montserrat', sans-serif;
-overflow-x: hidden;
+:root{
+--gold:#D4AF37;
+--black:#050505;
 }
 
-/* BACKGROUND */
-.video-bg {
-position: fixed;
-top: 0; left: 0;
-width: 100%; height: 100%;
-z-index: -1;
+body{
+margin:0;
+font-family:Montserrat;
+background:var(--black);
+color:white;
+overflow-x:hidden;
 }
 
-.video-bg img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-filter: brightness(0.25);
+.bg{
+position:fixed;
+top:0;left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+.bg img{
+width:100%;
+height:100%;
+object-fit:cover;
+filter:brightness(0.25);
 }
 
 /* NAV */
-nav {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 10px 5%;
-border-bottom: 2px solid var(--gold);
-background: rgba(0,0,0,0.95);
-position: sticky;
-top: 0;
-z-index: 1000;
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 5%;
+border-bottom:2px solid var(--gold);
+background:rgba(0,0,0,0.95);
+position:sticky;
+top:0;
 }
 
-.logo-area {
-display: flex;
-align-items: center;
-gap: 12px;
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
 }
 
-.logo-area img { height: 60px; }
+.logo img{height:55px;}
+.logo span{color:var(--gold);font-family:Cinzel;}
 
-.logo-area span {
-font-family: 'Cinzel', serif;
-color: var(--gold);
-font-size: 1.1rem;
+nav a{
+color:white;
+text-decoration:none;
+margin:0 10px;
+font-weight:700;
+cursor:pointer;
 }
-
-nav ul {
-display: flex;
-list-style: none;
-gap: 20px;
-}
-
-nav a {
-color: white;
-text-decoration: none;
-font-weight: 700;
-text-transform: uppercase;
-font-size: 0.75rem;
-}
-
-nav a:hover { color: var(--gold); }
+nav a:hover{color:var(--gold);}
 
 /* HERO */
-.hero {
-height: 90vh;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-text-align: center;
-padding: 0 5%;
+.hero{
+height:85vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
 }
 
-.hero h1 {
-font-family: 'Cinzel', serif;
-font-size: clamp(2rem, 7vw, 4.5rem);
-color: var(--gold);
-margin: 0;
+.hero h1{
+font-family:Cinzel;
+color:var(--gold);
+font-size:3rem;
 }
 
-.hero p {
-letter-spacing: 5px;
-text-transform: uppercase;
-opacity: 0.8;
-max-width: 800px;
+/* PAGES */
+.page{
+display:none;
+padding:60px 5%;
+max-width:1200px;
+margin:auto;
 }
 
-/* MAIN */
-.main-wrapper {
-background: rgba(0,0,0,0.92);
-border-top: 1px solid var(--gold);
-}
+.active{display:block;}
 
-.container {
-max-width: 1400px;
-margin: auto;
-padding: 60px 5%;
+.title{
+text-align:center;
+font-family:Cinzel;
+color:var(--gold);
+margin-bottom:30px;
 }
 
 /* GRID */
-.grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 25px;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
 }
 
 /* CARD */
-.card {
-background: rgba(20,20,20,0.85);
-border: 1px solid #222;
-padding: 35px;
-cursor: pointer;
-transition: 0.4s;
+.card{
+background:rgba(20,20,20,0.85);
+padding:25px;
+border:1px solid #222;
+cursor:pointer;
+transition:0.3s;
 }
-
-.card:hover {
-border-color: var(--gold);
-transform: translateY(-10px);
+.card:hover{
+border-color:var(--gold);
+transform:translateY(-8px);
 }
-
-.card h3 {
-font-family: 'Cinzel', serif;
-color: var(--gold);
-font-size: 1.4rem;
-}
-
-.price {
-font-size: 1.5rem;
-font-weight: 800;
-margin: 15px 0;
-}
-
-.small {
-color: #aaa;
-font-size: 0.8rem;
-}
+.card h3{color:var(--gold);font-family:Cinzel}
 
 /* BUTTON */
-.btn {
-display: block;
-width: 100%;
-background: var(--gold);
-color: black;
-padding: 16px;
-text-align: center;
-font-weight: 800;
-border: none;
-cursor: pointer;
-text-transform: uppercase;
+.btn{
+background:var(--gold);
+color:black;
+padding:14px;
+border:none;
+width:100%;
+font-weight:800;
+cursor:pointer;
+margin-top:10px;
 }
 
-.btn:hover { background: white; }
-
-/* INPUT */
-input, select {
-width: 100%;
-padding: 12px;
-margin: 8px 0;
-border: none;
-outline: none;
+/* MODAL PAGE */
+.modalPage{
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;
+height:100%;
+background:#050505;
+z-index:9999;
+overflow:auto;
+padding:50px;
 }
 
-/* INFO */
-.info-box {
-border: 1px solid #222;
-padding: 20px;
-margin-top: 20px;
-background: rgba(10,10,10,0.7);
+.close{
+color:var(--gold);
+font-size:20px;
+cursor:pointer;
+position:absolute;
+top:20px;
+right:30px;
 }
 
-/* FOOTER */
-footer {
-text-align: center;
-padding: 40px;
-border-top: 1px solid #111;
-color: #666;
-font-size: 0.8rem;
+/* CAR */
+.carBox{
+border:1px solid #333;
+padding:15px;
+margin:10px 0;
 }
 
 </style>
@@ -202,186 +166,209 @@ font-size: 0.8rem;
 
 <body>
 
-<!-- BACKGROUND -->
-<div class="video-bg">
+<div class="bg">
 <img src="fond-luxe.jpg">
 </div>
 
-<!-- NAV -->
 <nav>
-<div class="logo-area">
+<div class="logo">
 <img src="logo.png">
 <span>DAKAR ELITE DRIVER</span>
 </div>
 
-<ul>
-<li><a href="#services">Services</a></li>
-<li><a href="#booking">Réservation</a></li>
-<li><a href="#fleet">Flotte</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+<div>
+<a onclick="show('home')">Accueil</a>
+<a onclick="show('services')">Services</a>
+<a onclick="show('fleet')">Flotte</a>
+<a onclick="show('contact')">Contact</a>
+</div>
 </nav>
 
-<!-- HERO -->
-<header class="hero">
-<p>Prestige • Sécurité • Discrétion • Excellence</p>
+<!-- HOME -->
+<div id="home" class="page active">
 
-<h1>L'EXCELLENCE AUTOMOBILE AU SÉNÉGAL</h1>
+<div class="hero">
+<h1>EXCELLENCE AUTOMOBILE AU SÉNÉGAL</h1>
+<p>VTC • Location • Mariage • Vente • Business VIP</p>
+</div>
 
-<p>
-Service VTC premium, location, mariage, vente de véhicules et transport VIP au Sénégal.
-</p>
-</header>
-
-<!-- MAIN -->
-<div class="main-wrapper">
+</div>
 
 <!-- SERVICES -->
-<div id="services" class="container">
+<div id="services" class="page">
 
-<h2 style="text-align:center;color:var(--gold);font-family:Cinzel;">SERVICES PREMIUM</h2>
+<h2 class="title">NOS SERVICES</h2>
 
 <div class="grid">
 
-<div class="card">
-<h3>VTC AVEC CHAUFFEUR</h3>
-<div class="price">90 000 FCFA / JOUR</div>
+<div class="card" onclick="openPage('tourism')">
+<h3>TOURISME</h3>
+<p>Dakar • Gorée • Lac Rose • Bandia</p>
 </div>
 
-<div class="card">
-<h3>LOCATION SIMPLE</h3>
-<div class="price">75 000 FCFA / JOUR</div>
-<p class="small">-10% dès 10 jours</p>
+<div class="card" onclick="openPage('mariage')">
+<h3>MARIAGE VIP</h3>
+<p>Service luxe cérémonies & événements</p>
 </div>
 
-<div class="card">
-<h3>AÉROPORT VIP</h3>
-<div class="price">25 000 FCFA+</div>
-</div>
-
-<div class="card">
+<div class="card" onclick="openPage('business')">
 <h3>BUSINESS</h3>
-<div class="price">SUR DEVIS</div>
+<p>Service entreprise — devis personnalisé</p>
 </div>
 
-<div class="card">
-<h3>MARIAGE & ÉVÉNEMENT</h3>
-<div class="price">80 000 FCFA+</div>
-<p class="small">Véhicule décoré + chauffeur élégant</p>
+<div class="card" onclick="openPage('partenariat')">
+<h3>PARTENARIAT</h3>
+<p>Flotte véhicules — revenus partagés</p>
 </div>
 
-<div class="card">
-<h3>VENTE DE VOITURES</h3>
-<div class="price">À PARTIR DE 5M FCFA</div>
-<p class="small">Neuf & occasion + importation</p>
-</div>
-
-</div>
-
-<div class="info-box">
-💎 Dakar Elite Driver propose un service complet :
-VTC • Location • Mariage • Vente de véhicules • Transport VIP • Entreprises
-
-🔥 Réduction -10% dès 10 jours de location
+<div class="card" onclick="openPage('vente')">
+<h3>VENTE VOITURES</h3>
+<p>Import & véhicules disponibles</p>
 </div>
 
 </div>
 
-<!-- BOOKING -->
-<div id="booking" class="container">
+</div>
 
-<h2 style="text-align:center;color:var(--gold);font-family:Cinzel;">RÉSERVATION</h2>
+<!-- TOURISM PAGE -->
+<div class="modalPage" id="tourism">
 
-<div class="card">
+<span class="close" onclick="closePage()">✖</span>
 
-<input id="name" placeholder="Nom complet">
-<input id="phone" placeholder="WhatsApp">
-<input id="from" placeholder="Départ">
-<input id="to" placeholder="Destination">
+<h2 style="color:gold;font-family:Cinzel;">TOURISME PREMIUM</h2>
 
-<select id="service">
-<option>VTC Chauffeur</option>
-<option>Location</option>
-<option>Aéroport VIP</option>
-<option>Business</option>
-<option>Mariage</option>
-<option>Vente véhicule</option>
-</select>
+<p>
+Découvrez le Sénégal autrement avec un chauffeur privé professionnel.
+Nous vous accompagnons dans les lieux les plus emblématiques avec confort, sécurité et luxe.
+</p>
 
-<button class="btn" onclick="book()">Réserver via WhatsApp</button>
+<ul>
+<li>Île de Gorée</li>
+<li>Lac Rose</li>
+<li>Réserve de Bandia</li>
+<li>Saly & Petite Côte</li>
+</ul>
+
+<button class="btn" onclick="book('Tourisme')">Réserver Tourisme</button>
 
 </div>
+
+<!-- MARIAGE -->
+<div class="modalPage" id="mariage">
+
+<span class="close" onclick="closePage()">✖</span>
+
+<h2 style="color:gold;font-family:Cinzel;">MARIAGE & ÉVÉNEMENTIEL</h2>
+
+<p>
+Service VIP pour mariages et événements avec véhicules décorés et chauffeur élégant.
+Expérience haut de gamme garantie.
+</p>
+
+<button class="btn" onclick="book('Mariage')">Réserver Mariage</button>
+
+</div>
+
+<!-- BUSINESS -->
+<div class="modalPage" id="business">
+
+<span class="close" onclick="closePage()">✖</span>
+
+<h2 style="color:gold;font-family:Cinzel;">BUSINESS VIP</h2>
+
+<p>
+Transport professionnel pour entreprises et dirigeants.
+👉 Service uniquement sur devis personnalisé.
+</p>
+
+<button class="btn" onclick="book('Business')">Demander un devis</button>
+
+</div>
+
+<!-- PARTENARIAT -->
+<div class="modalPage" id="partenariat">
+
+<span class="close" onclick="closePage()">✖</span>
+
+<h2 style="color:gold;font-family:Cinzel;">PARTENARIAT VÉHICULES</h2>
+
+<p>
+Rejoignez notre flotte et gagnez un revenu mensuel ou journalier grâce à vos véhicules.
+</p>
+
+<p>💰 Revenus partagés selon utilisation du véhicule</p>
+
+<button class="btn">Proposer un véhicule</button>
+
+</div>
+
+<!-- VENTE -->
+<div class="modalPage" id="vente">
+
+<span class="close" onclick="closePage()">✖</span>
+
+<h2 style="color:gold;font-family:Cinzel;">VENTE DE VOITURES</h2>
+
+<p>Véhicules disponibles immédiatement :</p>
+
+<div class="carBox">Toyota Prado 2020</div>
+<div class="carBox">Range Rover Sport</div>
+<div class="carBox">Hyundai Tucson</div>
+<div class="carBox">Toyota Camry</div>
+<div class="carBox">Mercedes GLE</div>
+
+<button class="btn">Demander prix</button>
 
 </div>
 
 <!-- FLEET -->
-<div id="fleet" class="container">
+<div id="fleet" class="page">
 
-<h2 style="text-align:center;color:var(--gold);font-family:Cinzel;">FLOTTE</h2>
+<h2 class="title">FLOTTE 5 VÉHICULES</h2>
 
 <div class="grid">
 
-<div class="card">
-<h3>SUV VIP</h3>
-<p>Range Rover • Prado • Palisade</p>
-</div>
-
-<div class="card">
-<h3>BERLINE BUSINESS</h3>
-<p>Camry • Sonata • Accord</p>
-</div>
-
-<div class="card">
-<h3>VAN LUXE</h3>
-<p>Groupes • VIP • Événements</p>
-</div>
+<div class="card">Range Rover Sport</div>
+<div class="card">Toyota Prado</div>
+<div class="card">Hyundai Palisade</div>
+<div class="card">Toyota Camry</div>
+<div class="card">Mercedes E-Class</div>
 
 </div>
 
 </div>
 
 <!-- CONTACT -->
-<div id="contact" class="container">
+<div id="contact" class="page">
 
-<h2 style="text-align:center;color:var(--gold);font-family:Cinzel;">CONTACT</h2>
+<h2 class="title">CONTACT</h2>
 
-<div class="info-box">
-
-📍 Dakar, Sénégal  
-📞 +221 77 095 37 66  
-📞 +221 76 903 87 55  
-✉️ dakarelitedriver@gmail.com  
-
-<br><br>
-
-✔ Service 24/7  
-✔ Chauffeurs professionnels  
-✔ Location & vente véhicules  
-✔ Mariage & événements VIP  
-✔ Réduction -10% dès 10 jours
+<p style="text-align:center">
+📍 Dakar Sénégal<br>
+📞 +221 77 095 37 66<br>
+📞 +221 76 903 87 55
+</p>
 
 </div>
-
-</div>
-
-</div>
-
-<!-- FOOTER -->
-<footer>
-© 2026 Dakar Elite Driver — VTC Premium Sénégal
-</footer>
 
 <script>
 
-function book(){
+function show(id){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
 
-let msg =
-"Nouvelle réservation%0A"+
-"Nom: "+name.value+"%0A"+
-"Tel: "+phone.value+"%0A"+
-"Service: "+service.value+"%0A"+
-"Départ: "+from.value+"%0A"+
-"Destination: "+to.value;
+function openPage(id){
+document.getElementById(id).style.display="block";
+}
+
+function closePage(){
+document.querySelectorAll('.modalPage').forEach(p=>p.style.display="none");
+}
+
+function book(service){
+
+let msg="Réservation%0AService:"+service;
 
 window.open("https://wa.me/221770953766?text="+msg);
 
