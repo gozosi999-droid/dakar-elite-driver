@@ -3,11 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dakar Elite Driver | Premium Platform</title>
+
+<title>Dakar Elite Driver | VTC Premium Sénégal</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
 --gold:#D4AF37;
 --black:#050505;
@@ -79,38 +81,56 @@ nav a:hover{color:var(--gold);}
 
 /* HERO */
 .hero{
-height:85vh;
+height:90vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
+padding:0 20px;
 }
 
 .hero h1{
 font-family:Cinzel;
 color:var(--gold);
 font-size:clamp(2rem,6vw,4rem);
+margin:0;
 }
 
 .hero p{
-letter-spacing:6px;
+letter-spacing:5px;
 text-transform:uppercase;
+opacity:0.8;
+}
+
+.btn{
+background:var(--gold);
+color:black;
+padding:15px;
+border:none;
+font-weight:800;
+cursor:pointer;
+margin-top:15px;
 }
 
 /* SECTIONS */
 .section{
-display:none;
-padding:60px 5%;
+padding:70px 5%;
 max-width:1200px;
 margin:auto;
 }
 
-.active{display:block;}
+.title{
+text-align:center;
+font-family:Cinzel;
+color:var(--gold);
+margin-bottom:40px;
+}
 
+/* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:20px;
 }
 
@@ -119,8 +139,8 @@ gap:20px;
 background:rgba(20,20,20,0.8);
 border:1px solid #222;
 padding:25px;
-cursor:pointer;
 transition:0.3s;
+cursor:pointer;
 }
 
 .card:hover{
@@ -134,21 +154,23 @@ color:var(--gold);
 }
 
 .price{
-font-size:1.4rem;
+font-size:1.3rem;
 font-weight:800;
 margin-top:10px;
 }
 
-/* BUTTON */
-.btn{
-background:var(--gold);
-color:black;
-padding:15px;
+/* RESERVATION */
+input,select{
 width:100%;
+padding:12px;
+margin:8px 0;
 border:none;
-font-weight:800;
-cursor:pointer;
-margin-top:10px;
+}
+
+.formBox{
+background:#111;
+padding:25px;
+border:1px solid #222;
 }
 
 /* MODAL */
@@ -168,8 +190,8 @@ z-index:9999;
 background:#111;
 border:1px solid var(--gold);
 padding:25px;
-width:90%;
 max-width:500px;
+width:90%;
 position:relative;
 }
 
@@ -177,31 +199,21 @@ position:relative;
 position:absolute;
 top:10px;
 right:15px;
-cursor:pointer;
 color:var(--gold);
-font-size:20px;
+cursor:pointer;
 }
 
-/* ADMIN */
-.adminBox{
-background:#0d0d0d;
-border:1px solid #222;
-padding:20px;
-margin-top:20px;
-}
-
-input,select{
-width:100%;
-padding:12px;
-margin:8px 0;
-border:none;
-}
-
+/* FOOTER */
 footer{
 text-align:center;
-padding:30px;
-color:#555;
+padding:40px;
+color:#666;
 border-top:1px solid #111;
+}
+
+.small{
+opacity:0.6;
+font-size:0.8rem;
 }
 
 </style>
@@ -213,6 +225,7 @@ border-top:1px solid #111;
 <img src="fond-luxe.jpg">
 </div>
 
+<!-- NAV -->
 <nav>
 <div class="logo">
 <img src="logo.png">
@@ -220,21 +233,27 @@ border-top:1px solid #111;
 </div>
 
 <ul>
-<li><a onclick="go('home')">Accueil</a></li>
-<li><a onclick="go('services')">Services</a></li>
-<li><a onclick="go('booking')">Réservation</a></li>
-<li><a onclick="go('fleet')">Flotte</a></li>
-<li><a onclick="go('partner')">Partenariat</a></li>
-<li><a onclick="go('admin')">Admin</a></li>
+<li onclick="go('home')">Accueil</li>
+<li onclick="go('services')">Services</li>
+<li onclick="go('booking')">Réservation</li>
+<li onclick="go('fleet')">Flotte</li>
+<li onclick="go('admin')">Admin</li>
 </ul>
 </nav>
 
 <!-- HERO -->
-<div id="home" class="section active">
+<div id="home" class="section">
 
 <div class="hero">
-<p>Prestige • Sécurité • Excellence</p>
-<h1>DAKAR ELITE DRIVER</h1>
+<p>Prestige • Sécurité • Discrétion • Excellence</p>
+
+<h1>L'EXCELLENCE AUTOMOBILE AU SÉNÉGAL</h1>
+
+<p style="max-width:700px; margin-top:20px;">
+Service VTC premium avec chauffeurs professionnels, véhicules haut de gamme et expériences personnalisées à Dakar et partout au Sénégal.
+</p>
+
+<button class="btn" onclick="go('booking')">Réserver maintenant</button>
 </div>
 
 </div>
@@ -242,28 +261,38 @@ border-top:1px solid #111;
 <!-- SERVICES -->
 <div id="services" class="section">
 
-<h2 style="color:var(--gold);font-family:Cinzel;text-align:center;">SERVICES PREMIUM</h2>
+<h2 class="title">NOS SERVICES PREMIUM</h2>
 
 <div class="grid">
 
-<div class="card" onclick="openModal('VTC PREMIUM','Chauffeur privé bilingue, service luxe Dakar + Sénégal.')">
+<div class="card" onclick="openModal('VTC PREMIUM','Chauffeur privé professionnel, bilingue, service luxe disponible 24/7 à Dakar et partout au Sénégal.')">
 <h3>VTC CHAUFFEUR</h3>
 <div class="price">90 000 FCFA / JOUR</div>
 </div>
 
-<div class="card" onclick="openModal('LOCATION','Location sans chauffeur, autonomie totale.')">
+<div class="card" onclick="openModal('LOCATION','Location de véhicules sans chauffeur, autonomie totale et flexibilité.')">
 <h3>LOCATION SIMPLE</h3>
 <div class="price">SUR DEMANDE</div>
 </div>
 
-<div class="card" onclick="openModal('AÉROPORT VIP','Accueil AIBD premium avec pancarte.')">
-<h3>AÉROPORT VIP</h3>
+<div class="card" onclick="openModal('AÉROPORT VIP','Accueil AIBD avec pancarte + assistance bagages + confort premium.')">
+<h3>TRANSFERT AÉROPORT</h3>
 <div class="price">25 000 FCFA+</div>
 </div>
 
-<div class="card" onclick="openModal('BUSINESS','Service entreprise et événements.')">
+<div class="card" onclick="openModal('BUSINESS','Service pour entreprises, hôtels, événements et VIP.')">
 <h3>BUSINESS</h3>
 <div class="price">SUR DEVIS</div>
+</div>
+
+<div class="card" onclick="openModal('TOURISME','Visites touristiques Sénégal : Gorée, Lac Rose, Saly, Bandia.')">
+<h3>TOURISME</h3>
+<div class="price">SUR MESURE</div>
+</div>
+
+<div class="card" onclick="openModal('PARTENARIAT','Possibilité de partenariat avec propriétaires de véhicules.')">
+<h3>PARTENARIAT</h3>
+<div class="price">REVENUS PARTAGÉS</div>
 </div>
 
 </div>
@@ -272,13 +301,13 @@ border-top:1px solid #111;
 <!-- BOOKING -->
 <div id="booking" class="section">
 
-<h2 style="color:var(--gold);font-family:Cinzel;text-align:center;">RÉSERVATION</h2>
+<h2 class="title">RÉSERVATION RAPIDE</h2>
 
-<div class="card">
+<div class="formBox">
 
 <input id="name" placeholder="Nom complet">
 <input id="phone" placeholder="WhatsApp">
-<input id="from" placeholder="Départ">
+<input id="from" placeholder="Adresse départ">
 <input id="to" placeholder="Destination">
 
 <select id="service">
@@ -286,9 +315,10 @@ border-top:1px solid #111;
 <option>Location</option>
 <option>Aéroport VIP</option>
 <option>Business</option>
+<option>Tourisme</option>
 </select>
 
-<button class="btn" onclick="book()">Réserver WhatsApp</button>
+<button class="btn" onclick="book()">Réserver via WhatsApp</button>
 
 </div>
 
@@ -297,41 +327,24 @@ border-top:1px solid #111;
 <!-- FLEET -->
 <div id="fleet" class="section">
 
-<h2 style="color:var(--gold);font-family:Cinzel;text-align:center;">FLOTTE DISPONIBLE</h2>
+<h2 class="title">FLOTTE DISPONIBLE</h2>
 
 <div class="grid">
 
 <div class="card">
 <h3>SUV VIP</h3>
-<p>Range Rover / Toyota Prado</p>
+<p>Range Rover • Prado • Palisade</p>
 </div>
 
 <div class="card">
 <h3>BERLINE BUSINESS</h3>
-<p>Hyundai Sonata / Toyota Camry</p>
+<p>Camry • Sonata • Accord</p>
 </div>
 
 <div class="card">
-<h3>LUXURY VAN</h3>
-<p>Transport groupe / VIP</p>
+<h3>VAN LUXE</h3>
+<p>Groupes • Événements • VIP</p>
 </div>
-
-</div>
-
-</div>
-
-<!-- PARTNER -->
-<div id="partner" class="section">
-
-<h2 style="color:var(--gold);font-family:Cinzel;text-align:center;">PARTENARIAT VÉHICULES</h2>
-
-<div class="card">
-
-<p>Proposez vos véhicules et rejoignez notre réseau Dakar Elite Driver.</p>
-
-<button class="btn" onclick="openModal('PARTENARIAT','Nous travaillons avec des propriétaires de véhicules. Partage de revenus ou location journalière.')">
-Détails partenariat
-</button>
 
 </div>
 
@@ -340,38 +353,47 @@ Détails partenariat
 <!-- ADMIN -->
 <div id="admin" class="section">
 
-<h2 style="color:var(--gold);font-family:Cinzel;text-align:center;">DASHBOARD</h2>
+<h2 class="title">DASHBOARD RÉSERVATIONS</h2>
 
-<div class="adminBox" id="panel">Aucune réservation</div>
+<div class="formBox" id="panel">
+Aucune réservation enregistrée
+</div>
 
 </div>
 
+<!-- FOOTER -->
 <footer>
-© 2026 Dakar Elite Driver
+
+<p class="small">DAKAR ELITE DRIVER — VTC PREMIUM SÉNÉGAL</p>
+
+<p>📍 Dakar • 📞 +221 77 095 37 66 / +221 76 903 87 55</p>
+
+<p class="small">© 2026 Tous droits réservés</p>
+
 </footer>
 
 <!-- MODAL -->
 <div class="modal" id="modal">
 <div class="modal-content">
 <span class="close" onclick="closeModal()">✖</span>
-<h2 id="mt"></h2>
-<p id="mc"></p>
+<h2 id="t"></h2>
+<p id="c"></p>
 </div>
 </div>
 
 <script>
 
-/* NAVIGATION SECTIONS */
+/* NAVIGATION */
 function go(id){
-document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-document.getElementById(id).classList.add('active');
+document.querySelectorAll('.section').forEach(s=>s.style.display='none');
+document.getElementById(id).style.display='block';
 }
 
 /* MODAL */
 function openModal(t,c){
 modal.style.display='flex';
-mt.innerText=t;
-mc.innerText=c;
+t.innerText=t;
+c.innerText=c;
 }
 function closeModal(){
 modal.style.display='none';
@@ -389,9 +411,9 @@ service:service.value,
 date:new Date().toLocaleString()
 };
 
-let list=JSON.parse(localStorage.getItem('db')||'[]');
-list.push(data);
-localStorage.setItem('db',JSON.stringify(list));
+let db=JSON.parse(localStorage.getItem('db')||'[]');
+db.push(data);
+localStorage.setItem('db',JSON.stringify(db));
 
 let msg=
 "Nouvelle réservation%0A"+
@@ -408,9 +430,10 @@ load();
 
 /* ADMIN */
 function load(){
-let list=JSON.parse(localStorage.getItem('db')||'[]');
-panel.innerHTML=list.length?
-list.reverse().map(r=>
+let db=JSON.parse(localStorage.getItem('db')||'[]');
+
+panel.innerHTML=db.length?
+db.reverse().map(r=>
 `<div style="border-bottom:1px solid #333;padding:10px">
 <b>${r.name}</b><br>
 ${r.phone}<br>
