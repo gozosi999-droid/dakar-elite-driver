@@ -6,7 +6,7 @@
 
 <title>Dakar Elite Driver | Plateforme Premium</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -68,7 +68,7 @@ nav a:hover{color:var(--gold);}
 
 /* HERO */
 .hero{
-height:70vh;
+height:85vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -80,30 +80,6 @@ text-align:center;
 font-family:Cinzel;
 color:var(--gold);
 font-size:3rem;
-}
-
-/* SLIDER */
-.slider{
-display:flex;
-width:500%;
-animation:slide 18s infinite linear;
-margin-top:20px;
-}
-
-.slider img{
-width:100%;
-height:300px;
-object-fit:cover;
-filter:brightness(0.6);
-}
-
-@keyframes slide{
-0%{transform:translateX(0);}
-20%{transform:translateX(-20%);}
-40%{transform:translateX(-40%);}
-60%{transform:translateX(-60%);}
-80%{transform:translateX(-80%);}
-100%{transform:translateX(0);}
 }
 
 /* PAGES */
@@ -144,44 +120,6 @@ transform:translateY(-8px);
 }
 .card h3{color:var(--gold);font-family:Cinzel}
 
-/* SOCIAL */
-.social{
-display:flex;
-justify-content:center;
-gap:15px;
-flex-wrap:wrap;
-margin-top:20px;
-}
-
-.social a{
-padding:12px 18px;
-border:1px solid var(--gold);
-color:var(--gold);
-text-decoration:none;
-font-weight:700;
-transition:0.3s;
-}
-.social a:hover{
-background:var(--gold);
-color:black;
-}
-
-/* COMMENTS */
-.comment{
-background:rgba(20,20,20,0.8);
-padding:15px;
-border:1px solid #333;
-margin:10px 0;
-}
-
-/* FLOTE IMAGE */
-.carImg{
-width:100%;
-height:160px;
-object-fit:cover;
-border-bottom:1px solid #333;
-}
-
 /* BUTTON */
 .btn{
 background:var(--gold);
@@ -192,6 +130,35 @@ width:100%;
 font-weight:800;
 cursor:pointer;
 margin-top:10px;
+}
+
+/* MODAL PAGE */
+.modalPage{
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;
+height:100%;
+background:#050505;
+z-index:9999;
+overflow:auto;
+padding:50px;
+}
+
+.close{
+color:var(--gold);
+font-size:20px;
+cursor:pointer;
+position:absolute;
+top:20px;
+right:30px;
+}
+
+/* CAR */
+.carBox{
+border:1px solid #333;
+padding:15px;
+margin:10px 0;
 }
 
 </style>
@@ -222,20 +189,12 @@ margin-top:10px;
 
 <div class="hero">
 <h1>EXCELLENCE AUTOMOBILE AU SÉNÉGAL</h1>
-
-<div class="slider">
-<img src="https://images.unsplash.com/photo-1542362567-b07e54358753">
-<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
-<img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7">
-<img src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
-<img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023">
+<p>VTC • Location • Mariage • Vente • Business VIP</p>
 </div>
 
 </div>
 
-</div>
-
-<!-- SERVICES (INCHANGE) -->
+<!-- SERVICES -->
 <div id="services" class="page">
 
 <h2 class="title">NOS SERVICES</h2>
@@ -244,90 +203,151 @@ margin-top:10px;
 
 <div class="card" onclick="openPage('tourism')">
 <h3>TOURISME</h3>
-<p>Dakar • Gorée • Lac Rose</p>
+<p>Dakar • Gorée • Lac Rose • Bandia</p>
 </div>
 
 <div class="card" onclick="openPage('mariage')">
 <h3>MARIAGE VIP</h3>
+<p>Service luxe cérémonies & événements</p>
 </div>
 
 <div class="card" onclick="openPage('business')">
 <h3>BUSINESS</h3>
+<p>Service entreprise — devis personnalisé</p>
 </div>
 
 <div class="card" onclick="openPage('partenariat')">
 <h3>PARTENARIAT</h3>
+<p>Flotte véhicules — revenus partagés</p>
 </div>
 
 <div class="card" onclick="openPage('vente')">
 <h3>VENTE VOITURES</h3>
+<p>Import & véhicules disponibles</p>
 </div>
 
 </div>
 
 </div>
 
-<!-- FLOTE -->
+<!-- TOURISM PAGE -->
+<div class="modalPage" id="tourism">
+
+<span class="close" onclick="closePage()">✖</span>
+
+<h2 style="color:gold;font-family:Cinzel;">TOURISME PREMIUM</h2>
+
+<p>
+Découvrez le Sénégal autrement avec un chauffeur privé professionnel.
+Nous vous accompagnons dans les lieux les plus emblématiques avec confort, sécurité et luxe.
+</p>
+
+<ul>
+<li>Île de Gorée</li>
+<li>Lac Rose</li>
+<li>Réserve de Bandia</li>
+<li>Saly & Petite Côte</li>
+</ul>
+
+<button class="btn" onclick="book('Tourisme')">Réserver Tourisme</button>
+
+</div>
+
+<!-- MARIAGE -->
+<div class="modalPage" id="mariage">
+
+<span class="close" onclick="closePage()">✖</span>
+
+<h2 style="color:gold;font-family:Cinzel;">MARIAGE & ÉVÉNEMENTIEL</h2>
+
+<p>
+Service VIP pour mariages et événements avec véhicules décorés et chauffeur élégant.
+Expérience haut de gamme garantie.
+</p>
+
+<button class="btn" onclick="book('Mariage')">Réserver Mariage</button>
+
+</div>
+
+<!-- BUSINESS -->
+<div class="modalPage" id="business">
+
+<span class="close" onclick="closePage()">✖</span>
+
+<h2 style="color:gold;font-family:Cinzel;">BUSINESS VIP</h2>
+
+<p>
+Transport professionnel pour entreprises et dirigeants.
+👉 Service uniquement sur devis personnalisé.
+</p>
+
+<button class="btn" onclick="book('Business')">Demander un devis</button>
+
+</div>
+
+<!-- PARTENARIAT -->
+<div class="modalPage" id="partenariat">
+
+<span class="close" onclick="closePage()">✖</span>
+
+<h2 style="color:gold;font-family:Cinzel;">PARTENARIAT VÉHICULES</h2>
+
+<p>
+Rejoignez notre flotte et gagnez un revenu mensuel ou journalier grâce à vos véhicules.
+</p>
+
+<p>💰 Revenus partagés selon utilisation du véhicule</p>
+
+<button class="btn">Proposer un véhicule</button>
+
+</div>
+
+<!-- VENTE -->
+<div class="modalPage" id="vente">
+
+<span class="close" onclick="closePage()">✖</span>
+
+<h2 style="color:gold;font-family:Cinzel;">VENTE DE VOITURES</h2>
+
+<p>Véhicules disponibles immédiatement :</p>
+
+<div class="carBox">Toyota Prado 2020</div>
+<div class="carBox">Range Rover Sport</div>
+<div class="carBox">Hyundai Tucson</div>
+<div class="carBox">Toyota Camry</div>
+<div class="carBox">Mercedes GLE</div>
+
+<button class="btn">Demander prix</button>
+
+</div>
+
+<!-- FLEET -->
 <div id="fleet" class="page">
 
-<h2 class="title">FLOTTE PREMIUM</h2>
+<h2 class="title">FLOTTE 5 VÉHICULES</h2>
 
 <div class="grid">
 
-<div class="card">
-<img class="carImg" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
-<h3>Range Rover Sport</h3>
-</div>
-
-<div class="card">
-<img class="carImg" src="https://images.unsplash.com/photo-1550355291-bbee04a92027">
-<h3>Toyota Prado</h3>
-</div>
-
-<div class="card">
-<img class="carImg" src="https://images.unsplash.com/photo-1549924231-f129b911e442">
-<h3>Mercedes GLE</h3>
-</div>
-
-<div class="card">
-<img class="carImg" src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
-<h3>Toyota Camry</h3>
-</div>
-
-<div class="card">
-<img class="carImg" src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d">
-<h3>Hyundai Palisade</h3>
-</div>
+<div class="card">Range Rover Sport</div>
+<div class="card">Toyota Prado</div>
+<div class="card">Hyundai Palisade</div>
+<div class="card">Toyota Camry</div>
+<div class="card">Mercedes E-Class</div>
 
 </div>
 
 </div>
 
-<!-- CONTACT + SOCIAL -->
+<!-- CONTACT -->
 <div id="contact" class="page">
 
-<h2 class="title">CONTACT & RÉSEAUX</h2>
+<h2 class="title">CONTACT</h2>
 
 <p style="text-align:center">
 📍 Dakar Sénégal<br>
 📞 +221 77 095 37 66<br>
 📞 +221 76 903 87 55
 </p>
-
-<div class="social">
-
-<a href="https://instagram.com" target="_blank">Instagram</a>
-<a href="https://tiktok.com" target="_blank">TikTok</a>
-<a href="https://snapchat.com" target="_blank">Snapchat</a>
-<a href="https://wa.me/221770953766" target="_blank">WhatsApp</a>
-
-</div>
-
-<h2 class="title" style="margin-top:40px;">AVIS CLIENTS</h2>
-
-<div class="comment">⭐⭐⭐⭐⭐ Service impeccable, chauffeur très professionnel.</div>
-<div class="comment">⭐⭐⭐⭐⭐ Très bonne expérience mariage VIP.</div>
-<div class="comment">⭐⭐⭐⭐⭐ Ponctualité et luxe au top.</div>
 
 </div>
 
@@ -347,7 +367,11 @@ document.querySelectorAll('.modalPage').forEach(p=>p.style.display="none");
 }
 
 function book(service){
-window.open("https://wa.me/221770953766?text=Réservation%20"+service);
+
+let msg="Réservation%0AService:"+service;
+
+window.open("https://wa.me/221770953766?text="+msg);
+
 }
 
 </script>
