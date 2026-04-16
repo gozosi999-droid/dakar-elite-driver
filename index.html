@@ -4,16 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dakar Elite Driver - Chauffeur Privé à Dakar</title>
+<title>Dakar Elite Driver - VTC Premium Dakar</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+font-family:Arial;
 }
 
 body{
@@ -21,18 +22,20 @@ background:#0b0b0b;
 color:white;
 }
 
+/* HEADER */
+header{
+background:black;
+padding:18px 0;
+position:sticky;
+top:0;
+z-index:1000;
+border-bottom:1px solid #222;
+}
+
 .container{
 width:90%;
 max-width:1200px;
 margin:auto;
-}
-
-header{
-background:black;
-padding:20px 0;
-position:sticky;
-top:0;
-z-index:1000;
 }
 
 nav{
@@ -42,14 +45,14 @@ align-items:center;
 }
 
 .logo{
-font-size:22px;
-font-weight:bold;
 color:#d4af37;
+font-weight:bold;
+font-size:22px;
 }
 
 nav ul{
 display:flex;
-gap:25px;
+gap:20px;
 list-style:none;
 }
 
@@ -58,99 +61,147 @@ color:white;
 text-decoration:none;
 }
 
+/* HERO */
 .hero{
-padding:120px 0;
-background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
-url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070");
-background-size:cover;
+padding:120px 20px;
 text-align:center;
+background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+url("https://images.unsplash.com/photo-1503376780353-7e6692767b70");
+background-size:cover;
+background-position:center;
 }
 
 .hero h1{
 font-size:45px;
-margin-bottom:20px;
+margin-bottom:10px;
+}
+
+.hero p{
+opacity:0.8;
 }
 
 .btn{
 display:inline-block;
-padding:14px 30px;
+margin-top:15px;
+padding:12px 25px;
 background:#d4af37;
 color:black;
 text-decoration:none;
 border-radius:5px;
-margin-top:20px;
+font-weight:bold;
 }
 
+/* SECTIONS */
 .section{
-padding:80px 0;
+padding:70px 0;
 }
 
 .section h2{
 text-align:center;
 margin-bottom:40px;
-font-size:32px;
+color:#d4af37;
 }
 
+/* SERVICES */
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
 }
 
 .card{
 background:#111;
-padding:25px;
+padding:20px;
 border-radius:10px;
 text-align:center;
+border:1px solid #222;
 }
 
-.card i{
-font-size:30px;
-color:#d4af37;
-margin-bottom:15px;
-}
-
+/* FLOTTE */
 .flotte{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+gap:15px;
 }
 
 .vehicle{
 background:#111;
 padding:15px;
-border-radius:10px;
+border-radius:12px;
+border:1px solid #222;
+text-align:center;
 }
 
 .vehicle img{
 width:100%;
+height:170px;
+object-fit:cover;
 border-radius:10px;
 }
 
-.testimonials{
-display:grid;
-gap:20px;
+.vehicle h3{
+color:#d4af37;
 }
 
-.testimonial{
+.vehicle .btn{
+margin-top:10px;
+}
+
+/* FORM */
+form{
 background:#111;
 padding:20px;
 border-radius:10px;
+border:1px solid #222;
+max-width:700px;
+margin:auto;
 }
 
+input, select, textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:5px;
+}
+
+textarea{
+height:100px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#d4af37;
+border:none;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* TESTIMONIALS */
+.testimonial{
+background:#111;
+padding:15px;
+margin-bottom:10px;
+border-radius:10px;
+border:1px solid #222;
+}
+
+/* FOOTER */
 footer{
-background:black;
-padding:50px 0;
 text-align:center;
-margin-top:50px;
+padding:40px;
+background:black;
+border-top:1px solid #222;
+margin-top:40px;
 }
 
+/* WHATSAPP */
 .whatsapp{
 position:fixed;
-right:20px;
 bottom:20px;
+right:20px;
 background:#25d366;
-color:white;
 width:60px;
 height:60px;
 border-radius:50%;
@@ -158,8 +209,10 @@ display:flex;
 align-items:center;
 justify-content:center;
 font-size:28px;
+color:white;
 text-decoration:none;
 }
+
 </style>
 </head>
 
@@ -168,79 +221,25 @@ text-decoration:none;
 <header>
 <div class="container">
 <nav>
-
 <div class="logo">DAKAR ELITE DRIVER</div>
-
 <ul>
 <li><a href="#">Accueil</a></li>
-<li><a href="#services">Services</a></li>
 <li><a href="#flotte">Flotte</a></li>
-<li><a href="#contact">Contact</a></li>
+<li><a href="#form">Réservation</a></li>
+<li><a href="#avis">Avis</a></li>
 </ul>
-
 </nav>
 </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-<div class="container">
-<h1>Chauffeur Privé Haut de Gamme à Dakar</h1>
-<p>Transferts Aéroport - Mise à disposition - VIP</p>
-
-<a href="https://wa.me/221770953766" class="btn">
-Réserver maintenant
-</a>
-
-</div>
+<h1>Chauffeur Privé Premium à Dakar</h1>
+<p>VIP - Aéroport - Business - Mariage</p>
+<a href="#form" class="btn">Réserver maintenant</a>
 </section>
 
-<section class="section" id="services">
-<div class="container">
-
-<h2>Nos Services</h2>
-
-<div class="services">
-
-<div class="card">
-<i class="fa fa-plane"></i>
-<h3>Transfert Aéroport</h3>
-<p>AIBD vers Dakar ou toute destination</p>
-</div>
-
-<div class="card">
-<i class="fa fa-user-tie"></i>
-<h3>Chauffeur Privé</h3>
-<p>Service professionnel avec chauffeur bilingue</p>
-</div>
-
-<div class="card">
-<i class="fa fa-clock"></i>
-<h3>Mise à disposition</h3>
-<p>Voiture avec chauffeur à l'heure ou journée</p>
-</div>
-
-<div class="card">
-<i class="fa fa-car"></i>
-<h3>Location voiture</h3>
-<p>Location avec ou sans chauffeur</p>
-</div>
-
-<div class="card">
-<i class="fa fa-ring"></i>
-<h3>Mariage & Événement</h3>
-<p>Service premium pour vos événements</p>
-</div>
-
-<div class="card">
-<i class="fa fa-building"></i>
-<h3>Entreprise</h3>
-<p>Transport professionnel pour sociétés</p>
-</div>
-
-</div>
-</div>
-</section>
-
+<!-- FLOTTE -->
 <section class="section" id="flotte">
 <div class="container">
 
@@ -249,89 +248,130 @@ Réserver maintenant
 <div class="flotte">
 
 <div class="vehicle">
-<img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d">
-<h3>Mercedes Classe E</h3>
+<img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6">
+<h3>Range Rover Sport</h3>
+<p>45 000 FCFA</p>
 </div>
 
 <div class="vehicle">
 <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2">
 <h3>Toyota Prado</h3>
+<p>35 000 FCFA</p>
 </div>
 
 <div class="vehicle">
 <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a">
-<h3>Hyundai Staria</h3>
+<h3>Hyundai Palisade</h3>
+<p>40 000 FCFA</p>
 </div>
 
 <div class="vehicle">
-<img src="https://images.unsplash.com/photo-1549921296-3c65c7f7c7ab">
-<h3>Minibus VIP</h3>
+<img src="https://images.unsplash.com/photo-1626668893632-6f3a4466dacf">
+<h3>Mercedes GLE</h3>
+<p>50 000 FCFA</p>
+</div>
+
+<div class="vehicle">
+<img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d">
+<h3>Toyota Camry</h3>
+<p>25 000 FCFA</p>
 </div>
 
 </div>
 </div>
 </section>
 
-<section class="section">
+<!-- RESERVATION FORM -->
+<section class="section" id="form">
 <div class="container">
 
-<h2>Ils nous font confiance</h2>
+<h2>Réservation Rapide</h2>
 
-<div class="testimonials">
+<form onsubmit="sendWhatsApp(event)">
 
-<div class="testimonial">
-⭐⭐⭐⭐⭐  
-Service impeccable, chauffeur ponctuel et professionnel.  
-<strong>Amadou Ba</strong>
-</div>
+<input type="text" id="name" placeholder="Votre nom" required>
 
-<div class="testimonial">
-⭐⭐⭐⭐⭐  
-Voiture propre et confortable. Je recommande fortement.  
-<strong>Fatou Diop</strong>
-</div>
+<input type="tel" id="phone" placeholder="Téléphone" required>
 
-<div class="testimonial">
-⭐⭐⭐⭐⭐  
-Transport VIP parfait pour nos clients.  
-<strong>Jean Martin</strong>
-</div>
+<input type="text" id="trajet" placeholder="Trajet (ex: Aéroport - Almadies)" required>
 
-</div>
+<input type="date" id="date" required>
+
+<select id="vehicule">
+<option>Range Rover Sport</option>
+<option>Toyota Prado</option>
+<option>Hyundai Palisade</option>
+<option>Mercedes GLE</option>
+<option>Toyota Camry</option>
+</select>
+
+<textarea id="message" placeholder="Message supplémentaire"></textarea>
+
+<button type="submit">Envoyer sur WhatsApp</button>
+
+</form>
+
 </div>
 </section>
 
-<section class="section" id="contact">
+<!-- AVIS -->
+<section class="section" id="avis">
 <div class="container">
 
-<h2>Contact</h2>
+<h2>Avis Clients</h2>
 
-<div style="text-align:center">
+<div class="testimonial">
+⭐⭐⭐⭐⭐ Mamadou Ndiaye - Service impeccable
+</div>
 
-<p>📞 +221 77 095 37 66</p>
-<p>📞 +221 76 903 87 55</p>
-<p>📧 dakarelitedriver@gmail.com</p>
-<p>📍 Dakar - Sénégal</p>
+<div class="testimonial">
+⭐⭐⭐⭐⭐ Fatou Sow - Très professionnel
+</div>
 
-<a class="btn" href="https://wa.me/221770953766">
-WhatsApp Réservation
-</a>
+<div class="testimonial">
+⭐⭐⭐⭐⭐ Cheikh Diop - Ponctuel et sérieux
+</div>
 
+<div class="testimonial">
+⭐⭐⭐⭐⭐ Aminata Diallo - Service VIP parfait
 </div>
 
 </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-
 <p>© 2026 Dakar Elite Driver</p>
 <p>Chauffeur privé haut de gamme à Dakar</p>
-
 </footer>
 
+<!-- WHATSAPP BUTTON -->
 <a class="whatsapp" href="https://wa.me/221770953766">
 <i class="fab fa-whatsapp"></i>
 </a>
+
+<script>
+function sendWhatsApp(e){
+e.preventDefault();
+
+let name = document.getElementById("name").value;
+let phone = document.getElementById("phone").value;
+let trajet = document.getElementById("trajet").value;
+let date = document.getElementById("date").value;
+let vehicule = document.getElementById("vehicule").value;
+let message = document.getElementById("message").value;
+
+let url = "https://wa.me/221770953766?text="
++ "Nom: " + name + "%0a"
++ "Téléphone: " + phone + "%0a"
++ "Trajet: " + trajet + "%0a"
++ "Date: " + date + "%0a"
++ "Véhicule: " + vehicule + "%0a"
++ "Message: " + message;
+
+window.open(url, "_blank");
+}
+</script>
 
 </body>
 </html>
