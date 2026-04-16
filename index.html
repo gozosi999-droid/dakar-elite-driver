@@ -2,86 +2,17 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dakar Elite Driver | Accueil</title>
+<title>Dakar Elite Driver</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-<style>
-:root{
---gold:#D4AF37;
---black:#050505;
-}
-
-body{
-margin:0;
-font-family:Montserrat;
-background:black;
-color:white;
-}
-
-.bg{
-position:fixed;
-width:100%;
-height:100%;
-z-index:-1;
-filter:brightness(0.25);
-}
-
-.bg img{width:100%;height:100%;object-fit:cover;}
-
-nav{
-display:flex;
-justify-content:space-between;
-padding:15px 5%;
-border-bottom:2px solid var(--gold);
-background:black;
-position:sticky;
-top:0;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin:0 10px;
-font-weight:700;
-}
-
-.hero{
-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-}
-
-.hero h1{
-font-family:Cinzel;
-color:var(--gold);
-font-size:3rem;
-}
-
-.btn{
-background:var(--gold);
-padding:12px 20px;
-color:black;
-font-weight:800;
-text-decoration:none;
-display:inline-block;
-margin-top:20px;
-}
-</style>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="bg">
-<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
-</div>
-
 <nav>
-<div><b style="color:gold;">DAKAR ELITE</b></div>
+<div style="color:gold;font-weight:800;">DAKAR ELITE DRIVER</div>
+
 <div>
 <a href="index.html">Accueil</a>
 <a href="reservation.html">Réservation</a>
@@ -90,13 +21,61 @@ margin-top:20px;
 </div>
 </nav>
 
-<div class="hero">
+<header class="hero">
 <p>Prestige • Sécurité • Discrétion • Excellence</p>
-<h1>L’EXCELLENCE AUTOMOBILE AU SÉNÉGAL</h1>
-<p>Service VTC premium, location, mariage et transport VIP</p>
 
-<a class="btn" href="reservation.html">Réserver maintenant</a>
+<h1>L'EXCELLENCE AUTOMOBILE AU SÉNÉGAL</h1>
+
+<p>VTC premium - Location - Mariage - VIP - Business</p>
+
+<button class="btn" onclick="window.location='reservation.html'">
+Réserver maintenant
+</button>
+</header>
+
+<!-- SERVICES -->
+<section class="section">
+
+<h2 style="text-align:center;color:gold;font-family:Cinzel;">6 SERVICES PREMIUM</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>VTC CHAUFFEUR PRIVÉ</h3>
+<p>Transport luxe avec chauffeur professionnel disponible 24/7.</p>
 </div>
+
+<div class="card">
+<h3>LOCATION DE VOITURE</h3>
+<p>Location courte et longue durée avec ou sans chauffeur.</p>
+</div>
+
+<div class="card">
+<h3>AÉROPORT VIP</h3>
+<p>Accueil personnalisé avec pancarte et assistance bagages.</p>
+</div>
+
+<div class="card">
+<h3>MARIAGE & ÉVÉNEMENT</h3>
+<p>Véhicules décorés + service prestige pour événements.</p>
+</div>
+
+<div class="card">
+<h3>BUSINESS VIP</h3>
+<p>Déplacements entreprise avec facture et suivi mensuel.</p>
+</div>
+
+<div class="card">
+<h3>VENTE DE VÉHICULES</h3>
+<p>Importation et vente de véhicules haut de gamme.</p>
+</div>
+
+</div>
+</section>
+
+<footer>
+© 2026 Dakar Elite Driver - Tous droits réservés
+</footer>
 
 </body>
 </html>
