@@ -3,39 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <title>Réservation</title>
-<style>
-body{background:black;color:white;font-family:Montserrat;}
-input,select{width:90%;padding:10px;margin:10px;}
-.btn{background:gold;padding:12px;border:none;font-weight:bold;cursor:pointer;}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1 style="color:gold;text-align:center;">Réservation VIP</h1>
+<nav>
+<div style="color:gold;">DAKAR ELITE DRIVER</div>
+<div>
+<a href="index.html">Accueil</a>
+<a href="reservation.html">Réservation</a>
+<a href="flotte.html">Flotte</a>
+<a href="contact.html">Contact</a>
+</div>
+</nav>
 
-<div style="text-align:center;">
-<input id="name" placeholder="Nom">
-<input id="phone" placeholder="WhatsApp">
-<input id="from" placeholder="Départ">
-<input id="to" placeholder="Destination">
+<section class="section">
 
-<select id="service">
+<h1 style="text-align:center;color:gold;">RÉSERVATION VIP</h1>
+
+<div style="max-width:500px;margin:auto;">
+
+<input id="name" placeholder="Nom complet" style="width:100%;padding:10px;margin:10px 0;">
+<input id="phone" placeholder="WhatsApp" style="width:100%;padding:10px;margin:10px 0;">
+<input id="from" placeholder="Départ" style="width:100%;padding:10px;margin:10px 0;">
+<input id="to" placeholder="Destination" style="width:100%;padding:10px;margin:10px 0;">
+
+<select id="service" style="width:100%;padding:10px;margin:10px 0;">
 <option>VTC Chauffeur</option>
+<option>Location</option>
 <option>Aéroport VIP</option>
 <option>Mariage</option>
 <option>Business</option>
-<option>Location</option>
 <option>Vente véhicule</option>
 </select>
 
-<button class="btn" onclick="send()">Envoyer WhatsApp</button>
+<button class="btn" onclick="send()">Réserver WhatsApp</button>
+
 </div>
+
+</section>
 
 <script>
 function send(){
-let msg="Nom:"+name.value+" Départ:"+from.value+" Destination:"+to.value+" Service:"+service.value;
-window.open("https://wa.me/221770953766?text="+encodeURIComponent(msg));
+let msg =
+"Nom: " + name.value +
+"\nTéléphone: " + phone.value +
+"\nDépart: " + from.value +
+"\nDestination: " + to.value +
+"\nService: " + service.value;
+
+window.open("https://wa.me/221770953766?text=" + encodeURIComponent(msg));
 }
 </script>
 
