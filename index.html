@@ -22,7 +22,6 @@ font-family: 'Montserrat', sans-serif;
 overflow-x: hidden;
 }
 
-/* BACKGROUND */
 .video-bg {
 position: fixed;
 top: 0; left: 0;
@@ -37,7 +36,6 @@ object-fit: cover;
 filter: brightness(0.25);
 }
 
-/* NAV */
 nav {
 display: flex;
 justify-content: space-between;
@@ -80,7 +78,6 @@ font-size: 0.75rem;
 
 nav a:hover { color: var(--gold); }
 
-/* HERO */
 .hero {
 height: 90vh;
 display: flex;
@@ -105,7 +102,6 @@ opacity: 0.8;
 max-width: 800px;
 }
 
-/* MAIN */
 .main-wrapper {
 background: rgba(0,0,0,0.92);
 border-top: 1px solid var(--gold);
@@ -117,19 +113,16 @@ margin: auto;
 padding: 60px 5%;
 }
 
-/* GRID */
 .grid {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 gap: 25px;
 }
 
-/* CARD */
 .card {
 background: rgba(20,20,20,0.85);
 border: 1px solid #222;
 padding: 35px;
-cursor: pointer;
 transition: 0.4s;
 }
 
@@ -141,84 +134,26 @@ transform: translateY(-10px);
 .card h3 {
 font-family: 'Cinzel', serif;
 color: var(--gold);
-font-size: 1.4rem;
 }
 
 .price {
 font-size: 1.2rem;
 font-weight: 800;
-margin: 15px 0;
-color: white;
+margin: 10px 0;
 }
 
-.small {
-color: #aaa;
-font-size: 0.8rem;
-}
-
-/* BUTTON */
 .btn {
-display: block;
 width: 100%;
 background: var(--gold);
 color: black;
-padding: 16px;
-text-align: center;
+padding: 14px;
 font-weight: 800;
 border: none;
 cursor: pointer;
-text-transform: uppercase;
 }
 
 .btn:hover { background: white; }
 
-/* INPUT */
-input, select {
-width: 100%;
-padding: 12px;
-margin: 8px 0;
-border: none;
-outline: none;
-}
-
-/* INFO */
-.info-box {
-border: 1px solid #222;
-padding: 20px;
-margin-top: 20px;
-background: rgba(10,10,10,0.7);
-}
-
-/* CONTACT */
-.contact-panel{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-margin-top:40px;
-}
-
-.social-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:10px;
-margin-top:20px;
-}
-
-.social-grid a{
-text-decoration:none;
-border:1px solid #333;
-padding:10px;
-text-align:center;
-color:white;
-font-weight:700;
-}
-
-.social-grid a:hover{
-border-color:var(--gold);
-color:var(--gold);
-}
-
-/* FOOTER */
 footer {
 text-align: center;
 padding: 40px;
@@ -226,7 +161,6 @@ border-top: 1px solid #111;
 color: #666;
 font-size: 0.8rem;
 }
-
 </style>
 </head>
 
@@ -244,7 +178,6 @@ font-size: 0.8rem;
 
 <ul>
 <li><a href="#services">Services</a></li>
-<li><a href="#booking">Réservation</a></li>
 <li><a href="#fleet">Flotte</a></li>
 <li><a href="#avis">Avis</a></li>
 <li><a href="#contact">Contact</a></li>
@@ -252,9 +185,9 @@ font-size: 0.8rem;
 </nav>
 
 <header class="hero">
-<p>Prestige • Sécurité • Discrétion • Excellence</p>
-<h1>L'EXCELLENCE AUTOMOBILE AU SÉNÉGAL</h1>
-<p>Service VTC premium, location, mariage et transport VIP</p>
+<p>Prestige • Sécurité • Excellence</p>
+<h1>L’EXCELLENCE AUTOMOBILE AU SÉNÉGAL</h1>
+<p>VTC premium • Location • Mariage • Business • VIP</p>
 </header>
 
 <div class="main-wrapper">
@@ -265,34 +198,25 @@ font-size: 0.8rem;
 
 <div class="grid">
 
-<div class="card"><h3>VTC AVEC CHAUFFEUR</h3><div class="price">90 000 FCFA / JOUR</div></div>
-<div class="card"><h3>LOCATION SIMPLE</h3><div class="price">30 000 FCFA / JOUR</div></div>
-<div class="card"><h3>AÉROPORT VIP</h3><div class="price">35 000 FCFA+</div></div>
-<div class="card"><h3>MARIAGE</h3><div class="price">100 000 FCFA+</div></div>
-
+<div class="card">
+<h3>VTC AVEC CHAUFFEUR</h3>
+<div class="price">À partir de 90 000 FCFA / jour</div>
 </div>
-</div>
-
-<!-- BOOKING -->
-<div id="booking" class="container">
-
-<h2 style="text-align:center;color:var(--gold);font-family:Cinzel;">RÉSERVATION</h2>
 
 <div class="card">
+<h3>LOCATION DE VOITURE</h3>
+<div class="price">À partir de 30 000 FCFA / jour</div>
+</div>
 
-<input id="name" placeholder="Nom complet">
-<input id="phone" placeholder="WhatsApp">
-<input id="from" placeholder="Départ">
-<input id="to" placeholder="Destination">
+<div class="card">
+<h3>AÉROPORT VIP</h3>
+<div class="price">Service rapide & sécurisé</div>
+</div>
 
-<select id="service">
-<option>VTC Chauffeur</option>
-<option>Location</option>
-<option>Aéroport VIP</option>
-<option>Mariage</option>
-</select>
-
-<button class="btn" onclick="book()">Réserver via WhatsApp</button>
+<div class="card">
+<h3>MARIAGE & ÉVÉNEMENTS</h3>
+<div class="price">Voitures décorées + chauffeur élégant</div>
+</div>
 
 </div>
 </div>
@@ -300,83 +224,80 @@ font-size: 0.8rem;
 <!-- FLEET -->
 <div id="fleet" class="container">
 
-<h2 style="text-align:center;color:var(--gold);font-family:Cinzel;">FLOTTE PREMIUM</h2>
+<h2 style="text-align:center;color:var(--gold);font-family:Cinzel;">FLOTTE DE VÉHICULES</h2>
 
 <div class="grid">
 
-<div class="card"><h3>Range Rover Sport</h3><p>Luxe VIP ultime</p></div>
-<div class="card"><h3>Toyota Prado</h3><p>Robuste et confortable</p></div>
-<div class="card"><h3>Hyundai Palisade</h3><p>Familial premium</p></div>
-<div class="card"><h3>Mercedes GLE</h3><p>Classe et prestige</p></div>
-<div class="card"><h3>Toyota Camry</h3><p>Berline business</p></div>
+<div class="card">
+<h3>SUV PREMIUM</h3>
+<p>Range Rover Sport • Toyota Prado • Hyundai Palisade • Mercedes GLE</p>
+</div>
+
+<div class="card">
+<h3>BERLINES BUSINESS</h3>
+<p>Mercedes Classe E • BMW Série 5 • Audi A6 • Toyota Camry • Lexus ES</p>
+</div>
+
+<div class="card">
+<h3>LUXE & VIP</h3>
+<p>Chauffeurs professionnels • Confort total • Discrétion garantie</p>
+</div>
 
 </div>
 </div>
 
-<!-- AVIS -->
+<!-- AVIS CLIENTS -->
 <div id="avis" class="container">
 
 <h2 style="text-align:center;color:var(--gold);font-family:Cinzel;">AVIS CLIENTS</h2>
 
 <div class="grid">
 
-<div class="card">“Service impeccable pour mariage à Saly.”<br><b>- Fatou Sow</b></div>
-<div class="card">“Ponctualité et professionnalisme.”<br><b>- Ibrahima Ndiaye</b></div>
-<div class="card">“Très haut niveau de service VIP.”<br><b>- Aminata Diallo</b></div>
-<div class="card">“Expérience parfaite.”<br><b>- Ousmane Diop</b></div>
+<div class="card">
+<h3>Fatou Ndiaye</h3>
+<p>Service impeccable pour notre mariage à Saly. Chauffeur ponctuel et très professionnel.</p>
+</div>
+
+<div class="card">
+<h3>Amadou Ba</h3>
+<p>Très bonne expérience pour les transferts entreprise. Toujours à l’heure.</p>
+</div>
+
+<div class="card">
+<h3>Awa Sow</h3>
+<p>Voiture propre, chauffeur respectueux, service premium réel.</p>
+</div>
+
+<div class="card">
+<h3>Ibrahima Diallo</h3>
+<p>Excellent service VIP à l’aéroport. Je recommande fortement.</p>
+</div>
 
 </div>
 </div>
 
 <!-- CONTACT -->
 <div id="contact" class="container">
-
 <h2 style="text-align:center;color:var(--gold);font-family:Cinzel;">CONTACT</h2>
 
-<div class="contact-panel">
-
-<div>
+<div class="card">
 <p>📍 Dakar, Sénégal</p>
 <p>📞 +221 77 095 37 66</p>
 <p>📞 +221 76 903 87 55</p>
 <p>✉️ dakarelitedriver@gmail.com</p>
-</div>
 
-<div class="social-grid">
-<a href="#">Instagram</a>
-<a href="#">TikTok</a>
-<a href="#">Snapchat</a>
-<a href="https://wa.me/221770953766">WhatsApp</a>
-</div>
-
+<a href="https://wa.me/221770953766">
+<button class="btn">Réserver via WhatsApp</button>
+</a>
 </div>
 
 </div>
 
 <footer>
-© 2026 DAKAR ELITE DRIVER | Excellence & Prestige
+© 2026 DAKAR ELITE DRIVER | Luxe • Prestige • Excellence
 </footer>
 
 </div>
-
-<script>
-function book(){
-let name=document.getElementById('name').value;
-let phone=document.getElementById('phone').value;
-let from=document.getElementById('from').value;
-let to=document.getElementById('to').value;
-let service=document.getElementById('service').value;
-
-let msg=`Bonjour, réservation:%0A
-Nom: ${name}%0A
-Téléphone: ${phone}%0A
-Service: ${service}%0A
-Départ: ${from}%0A
-Destination: ${to}`;
-
-window.open("https://wa.me/221770953766?text="+msg,"_blank");
-}
-</script>
 
 </body>
 </html>
