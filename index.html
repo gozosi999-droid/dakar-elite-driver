@@ -4,213 +4,227 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dakar Elite Driver - VTC Premium Dakar</title>
+<title>Dakar Elite Driver | Officiel</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
+:root { --gold: #D4AF37; --black: #050505; }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
+* { box-sizing: border-box; scroll-behavior: smooth; }
+
+body {
+margin: 0;
+padding: 0;
+background: var(--black);
+color: white;
+font-family: 'Montserrat', sans-serif;
+overflow-x: hidden;
 }
 
-body{
-background:#0b0b0b;
-color:white;
+/* BACKGROUND */
+.video-bg {
+position: fixed;
+top: 0; left: 0;
+width: 100%; height: 100%;
+z-index: -1;
 }
 
-/* HEADER */
-header{
-background:black;
-padding:18px 0;
-position:sticky;
-top:0;
-z-index:1000;
-border-bottom:1px solid #222;
+.video-bg img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+filter: brightness(0.25);
 }
 
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
+/* NAV */
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 5%;
+border-bottom: 2px solid var(--gold);
+background: rgba(0,0,0,0.95);
+position: sticky;
+top: 0;
+z-index: 1000;
 }
 
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
+.logo-area {
+display: flex;
+align-items: center;
+gap: 12px;
 }
 
-.logo{
-color:#d4af37;
-font-weight:bold;
-font-size:22px;
+.logo-area img { height: 60px; }
+
+.logo-area span {
+font-family: 'Cinzel', serif;
+color: var(--gold);
+font-size: 1.1rem;
 }
 
-nav ul{
-display:flex;
-gap:20px;
-list-style:none;
+nav ul {
+display: flex;
+list-style: none;
+gap: 20px;
 }
 
-nav a{
-color:white;
-text-decoration:none;
+nav a {
+color: white;
+text-decoration: none;
+font-weight: 700;
+text-transform: uppercase;
+font-size: 0.75rem;
 }
+
+nav a:hover { color: var(--gold); }
 
 /* HERO */
-.hero{
-padding:120px 20px;
-text-align:center;
-background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
-url("https://images.unsplash.com/photo-1503376780353-7e6692767b70");
-background-size:cover;
-background-position:center;
+.hero {
+height: 90vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+padding: 0 5%;
 }
 
-.hero h1{
-font-size:45px;
-margin-bottom:10px;
+.hero h1 {
+font-family: 'Cinzel', serif;
+font-size: clamp(2rem, 7vw, 4.5rem);
+color: var(--gold);
+margin: 0;
 }
 
-.hero p{
-opacity:0.8;
+.hero p {
+letter-spacing: 5px;
+text-transform: uppercase;
+opacity: 0.8;
+max-width: 800px;
 }
 
-.btn{
-display:inline-block;
-margin-top:15px;
-padding:12px 25px;
-background:#d4af37;
-color:black;
-text-decoration:none;
-border-radius:5px;
-font-weight:bold;
+/* MAIN */
+.main-wrapper {
+background: rgba(0,0,0,0.92);
+border-top: 1px solid var(--gold);
 }
 
-/* SECTIONS */
-.section{
-padding:70px 0;
+.container {
+max-width: 1400px;
+margin: auto;
+padding: 60px 5%;
 }
 
-.section h2{
-text-align:center;
-margin-bottom:40px;
-color:#d4af37;
+/* GRID */
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 25px;
 }
 
-/* SERVICES */
-.services{
+/* CARD */
+.card {
+background: rgba(20,20,20,0.85);
+border: 1px solid #222;
+padding: 35px;
+cursor: pointer;
+transition: 0.4s;
+}
+
+.card:hover {
+border-color: var(--gold);
+transform: translateY(-10px);
+}
+
+.card h3 {
+font-family: 'Cinzel', serif;
+color: var(--gold);
+font-size: 1.4rem;
+}
+
+.price {
+font-size: 1.2rem;
+font-weight: 800;
+margin: 15px 0;
+color: white;
+}
+
+.small {
+color: #aaa;
+font-size: 0.8rem;
+}
+
+/* BUTTON */
+.btn {
+display: block;
+width: 100%;
+background: var(--gold);
+color: black;
+padding: 16px;
+text-align: center;
+font-weight: 800;
+border: none;
+cursor: pointer;
+text-transform: uppercase;
+}
+
+.btn:hover { background: white; }
+
+/* INPUT */
+input, select {
+width: 100%;
+padding: 12px;
+margin: 8px 0;
+border: none;
+outline: none;
+}
+
+/* INFO */
+.info-box {
+border: 1px solid #222;
+padding: 20px;
+margin-top: 20px;
+background: rgba(10,10,10,0.7);
+}
+
+/* CONTACT */
+.contact-panel{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px;
-}
-
-.card{
-background:#111;
-padding:20px;
-border-radius:10px;
-text-align:center;
-border:1px solid #222;
-}
-
-/* FLOTTE */
-.flotte{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;
-}
-
-.vehicle{
-background:#111;
-padding:15px;
-border-radius:12px;
-border:1px solid #222;
-text-align:center;
-}
-
-.vehicle img{
-width:100%;
-height:170px;
-object-fit:cover;
-border-radius:10px;
-}
-
-.vehicle h3{
-color:#d4af37;
-}
-
-.vehicle .btn{
-margin-top:10px;
-}
-
-/* FORM */
-form{
-background:#111;
-padding:20px;
-border-radius:10px;
-border:1px solid #222;
-max-width:700px;
-margin:auto;
-}
-
-input, select, textarea{
-width:100%;
-padding:12px;
-margin:10px 0;
-border:none;
-border-radius:5px;
-}
-
-textarea{
-height:100px;
-}
-
-button{
-width:100%;
-padding:12px;
-background:#d4af37;
-border:none;
-font-weight:bold;
-cursor:pointer;
-}
-
-/* TESTIMONIALS */
-.testimonial{
-background:#111;
-padding:15px;
-margin-bottom:10px;
-border-radius:10px;
-border:1px solid #222;
-}
-
-/* FOOTER */
-footer{
-text-align:center;
-padding:40px;
-background:black;
-border-top:1px solid #222;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
 margin-top:40px;
 }
 
-/* WHATSAPP */
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25d366;
-width:60px;
-height:60px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:28px;
-color:white;
+.social-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+margin-top:20px;
+}
+
+.social-grid a{
 text-decoration:none;
+border:1px solid #333;
+padding:10px;
+text-align:center;
+color:white;
+font-weight:700;
+}
+
+.social-grid a:hover{
+border-color:var(--gold);
+color:var(--gold);
+}
+
+/* FOOTER */
+footer {
+text-align: center;
+padding: 40px;
+border-top: 1px solid #111;
+color: #666;
+font-size: 0.8rem;
 }
 
 </style>
@@ -218,158 +232,149 @@ text-decoration:none;
 
 <body>
 
-<header>
-<div class="container">
+<div class="video-bg">
+<img src="fond-luxe.jpg">
+</div>
+
 <nav>
-<div class="logo">DAKAR ELITE DRIVER</div>
+<div class="logo-area">
+<img src="logo.png">
+<span>DAKAR ELITE DRIVER</span>
+</div>
+
 <ul>
-<li><a href="#">Accueil</a></li>
-<li><a href="#flotte">Flotte</a></li>
-<li><a href="#form">Réservation</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#booking">Réservation</a></li>
+<li><a href="#fleet">Flotte</a></li>
 <li><a href="#avis">Avis</a></li>
+<li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
-</div>
+
+<header class="hero">
+<p>Prestige • Sécurité • Discrétion • Excellence</p>
+<h1>L'EXCELLENCE AUTOMOBILE AU SÉNÉGAL</h1>
+<p>Service VTC premium, location, mariage et transport VIP</p>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-<h1>Chauffeur Privé Premium à Dakar</h1>
-<p>VIP - Aéroport - Business - Mariage</p>
-<a href="#form" class="btn">Réserver maintenant</a>
-</section>
+<div class="main-wrapper">
 
-<!-- FLOTTE -->
-<section class="section" id="flotte">
-<div class="container">
+<!-- SERVICES -->
+<div id="services" class="container">
+<h2 style="text-align:center;color:var(--gold);font-family:Cinzel;">SERVICES PREMIUM</h2>
 
-<h2>Notre Flotte</h2>
+<div class="grid">
 
-<div class="flotte">
-
-<div class="vehicle">
-<img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6">
-<h3>Range Rover Sport</h3>
-<p>45 000 FCFA</p>
-</div>
-
-<div class="vehicle">
-<img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2">
-<h3>Toyota Prado</h3>
-<p>35 000 FCFA</p>
-</div>
-
-<div class="vehicle">
-<img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a">
-<h3>Hyundai Palisade</h3>
-<p>40 000 FCFA</p>
-</div>
-
-<div class="vehicle">
-<img src="https://images.unsplash.com/photo-1626668893632-6f3a4466dacf">
-<h3>Mercedes GLE</h3>
-<p>50 000 FCFA</p>
-</div>
-
-<div class="vehicle">
-<img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d">
-<h3>Toyota Camry</h3>
-<p>25 000 FCFA</p>
-</div>
+<div class="card"><h3>VTC AVEC CHAUFFEUR</h3><div class="price">90 000 FCFA / JOUR</div></div>
+<div class="card"><h3>LOCATION SIMPLE</h3><div class="price">30 000 FCFA / JOUR</div></div>
+<div class="card"><h3>AÉROPORT VIP</h3><div class="price">35 000 FCFA+</div></div>
+<div class="card"><h3>MARIAGE</h3><div class="price">100 000 FCFA+</div></div>
 
 </div>
 </div>
-</section>
 
-<!-- RESERVATION FORM -->
-<section class="section" id="form">
-<div class="container">
+<!-- BOOKING -->
+<div id="booking" class="container">
 
-<h2>Réservation Rapide</h2>
+<h2 style="text-align:center;color:var(--gold);font-family:Cinzel;">RÉSERVATION</h2>
 
-<form onsubmit="sendWhatsApp(event)">
+<div class="card">
 
-<input type="text" id="name" placeholder="Votre nom" required>
+<input id="name" placeholder="Nom complet">
+<input id="phone" placeholder="WhatsApp">
+<input id="from" placeholder="Départ">
+<input id="to" placeholder="Destination">
 
-<input type="tel" id="phone" placeholder="Téléphone" required>
-
-<input type="text" id="trajet" placeholder="Trajet (ex: Aéroport - Almadies)" required>
-
-<input type="date" id="date" required>
-
-<select id="vehicule">
-<option>Range Rover Sport</option>
-<option>Toyota Prado</option>
-<option>Hyundai Palisade</option>
-<option>Mercedes GLE</option>
-<option>Toyota Camry</option>
+<select id="service">
+<option>VTC Chauffeur</option>
+<option>Location</option>
+<option>Aéroport VIP</option>
+<option>Mariage</option>
 </select>
 
-<textarea id="message" placeholder="Message supplémentaire"></textarea>
-
-<button type="submit">Envoyer sur WhatsApp</button>
-
-</form>
+<button class="btn" onclick="book()">Réserver via WhatsApp</button>
 
 </div>
-</section>
+</div>
+
+<!-- FLEET -->
+<div id="fleet" class="container">
+
+<h2 style="text-align:center;color:var(--gold);font-family:Cinzel;">FLOTTE PREMIUM</h2>
+
+<div class="grid">
+
+<div class="card"><h3>Range Rover Sport</h3><p>Luxe VIP ultime</p></div>
+<div class="card"><h3>Toyota Prado</h3><p>Robuste et confortable</p></div>
+<div class="card"><h3>Hyundai Palisade</h3><p>Familial premium</p></div>
+<div class="card"><h3>Mercedes GLE</h3><p>Classe et prestige</p></div>
+<div class="card"><h3>Toyota Camry</h3><p>Berline business</p></div>
+
+</div>
+</div>
 
 <!-- AVIS -->
-<section class="section" id="avis">
-<div class="container">
+<div id="avis" class="container">
 
-<h2>Avis Clients</h2>
+<h2 style="text-align:center;color:var(--gold);font-family:Cinzel;">AVIS CLIENTS</h2>
 
-<div class="testimonial">
-⭐⭐⭐⭐⭐ Mamadou Ndiaye - Service impeccable
-</div>
+<div class="grid">
 
-<div class="testimonial">
-⭐⭐⭐⭐⭐ Fatou Sow - Très professionnel
-</div>
-
-<div class="testimonial">
-⭐⭐⭐⭐⭐ Cheikh Diop - Ponctuel et sérieux
-</div>
-
-<div class="testimonial">
-⭐⭐⭐⭐⭐ Aminata Diallo - Service VIP parfait
-</div>
+<div class="card">“Service impeccable pour mariage à Saly.”<br><b>- Fatou Sow</b></div>
+<div class="card">“Ponctualité et professionnalisme.”<br><b>- Ibrahima Ndiaye</b></div>
+<div class="card">“Très haut niveau de service VIP.”<br><b>- Aminata Diallo</b></div>
+<div class="card">“Expérience parfaite.”<br><b>- Ousmane Diop</b></div>
 
 </div>
-</section>
+</div>
 
-<!-- FOOTER -->
+<!-- CONTACT -->
+<div id="contact" class="container">
+
+<h2 style="text-align:center;color:var(--gold);font-family:Cinzel;">CONTACT</h2>
+
+<div class="contact-panel">
+
+<div>
+<p>📍 Dakar, Sénégal</p>
+<p>📞 +221 77 095 37 66</p>
+<p>📞 +221 76 903 87 55</p>
+<p>✉️ dakarelitedriver@gmail.com</p>
+</div>
+
+<div class="social-grid">
+<a href="#">Instagram</a>
+<a href="#">TikTok</a>
+<a href="#">Snapchat</a>
+<a href="https://wa.me/221770953766">WhatsApp</a>
+</div>
+
+</div>
+
+</div>
+
 <footer>
-<p>© 2026 Dakar Elite Driver</p>
-<p>Chauffeur privé haut de gamme à Dakar</p>
+© 2026 DAKAR ELITE DRIVER | Excellence & Prestige
 </footer>
 
-<!-- WHATSAPP BUTTON -->
-<a class="whatsapp" href="https://wa.me/221770953766">
-<i class="fab fa-whatsapp"></i>
-</a>
+</div>
 
 <script>
-function sendWhatsApp(e){
-e.preventDefault();
+function book(){
+let name=document.getElementById('name').value;
+let phone=document.getElementById('phone').value;
+let from=document.getElementById('from').value;
+let to=document.getElementById('to').value;
+let service=document.getElementById('service').value;
 
-let name = document.getElementById("name").value;
-let phone = document.getElementById("phone").value;
-let trajet = document.getElementById("trajet").value;
-let date = document.getElementById("date").value;
-let vehicule = document.getElementById("vehicule").value;
-let message = document.getElementById("message").value;
+let msg=`Bonjour, réservation:%0A
+Nom: ${name}%0A
+Téléphone: ${phone}%0A
+Service: ${service}%0A
+Départ: ${from}%0A
+Destination: ${to}`;
 
-let url = "https://wa.me/221770953766?text="
-+ "Nom: " + name + "%0a"
-+ "Téléphone: " + phone + "%0a"
-+ "Trajet: " + trajet + "%0a"
-+ "Date: " + date + "%0a"
-+ "Véhicule: " + vehicule + "%0a"
-+ "Message: " + message;
-
-window.open(url, "_blank");
+window.open("https://wa.me/221770953766?text="+msg,"_blank");
 }
 </script>
 
