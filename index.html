@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dakar Elite Driver</title>
+<title>Dakar Elite Driver | Chauffeur Privé Premium</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -22,13 +22,29 @@ background:var(--black);
 color:white;
 }
 
+/* TOP BAR */
+
+.topbar{
+background:black;
+border-bottom:1px solid #222;
+padding:8px 5%;
+display:flex;
+justify-content:space-between;
+font-size:13px;
+}
+
+/* NAV */
+
 nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 5%;
-background:black;
 border-bottom:2px solid var(--gold);
+background:rgba(0,0,0,0.95);
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .logo{
@@ -38,12 +54,13 @@ gap:10px;
 }
 
 .logo img{
-height:50px;
+height:55px;
 }
 
 .logo span{
 font-family:Cinzel;
 color:var(--gold);
+font-size:18px;
 }
 
 nav a{
@@ -53,81 +70,132 @@ margin:0 15px;
 font-weight:600;
 }
 
+nav a:hover{
+color:var(--gold);
+}
+
+/* HERO */
+
 .hero{
-height:80vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
+height:85vh;
 background:url("https://images.unsplash.com/photo-1503376780353-7e6692767b70") center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+flex-direction:column;
 }
 
 .hero h1{
 font-family:Cinzel;
-font-size:3rem;
+font-size:3.5rem;
 color:var(--gold);
+margin:0;
+}
+
+.hero p{
+letter-spacing:3px;
 }
 
 .btn{
 background:var(--gold);
 color:black;
-padding:15px 30px;
-font-weight:800;
+padding:15px 35px;
 border:none;
+font-weight:800;
 margin-top:20px;
 cursor:pointer;
 }
 
-.section{
-padding:60px 5%;
-max-width:1200px;
-margin:auto;
-}
+/* BOOKING BAR */
 
-.title{
-text-align:center;
-color:var(--gold);
-font-family:Cinzel;
-margin-bottom:40px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.card{
+.booking{
 background:#111;
-padding:25px;
-border:1px solid #222;
+padding:20px;
+display:flex;
+gap:15px;
+justify-content:center;
+flex-wrap:wrap;
 }
 
-.card img{
-width:100%;
-height:160px;
-object-fit:cover;
-}
-
-.form{
-background:#111;
-padding:30px;
-}
-
-input,select{
-width:100%;
+.booking input,
+.booking select{
 padding:12px;
-margin:8px 0;
 background:black;
 border:1px solid #333;
 color:white;
 }
 
-footer{
+.section{
+padding:70px 5%;
+max-width:1300px;
+margin:auto;
+}
+
+.title{
 text-align:center;
-padding:40px;
+font-family:Cinzel;
+color:var(--gold);
+margin-bottom:50px;
+}
+
+/* SERVICES */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:#111;
+border:1px solid #222;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:var(--gold);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.card-body{
+padding:20px;
+}
+
+/* FLEET */
+
+.car{
+background:#111;
+padding:20px;
+border:1px solid #222;
+}
+
+/* TESTIMONIAL */
+
+.testimonial{
+background:#111;
+padding:25px;
+border:1px solid #222;
+}
+
+/* FOOTER */
+
+footer{
+background:black;
+padding:50px 5%;
 border-top:1px solid #222;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 }
 
 </style>
@@ -135,158 +203,197 @@ border-top:1px solid #222;
 
 <body>
 
+<div class="topbar">
+<div>📞 +221 77 095 37 66</div>
+<div>Chauffeur Premium 24/7 Dakar</div>
+</div>
+
 <nav>
+
 <div class="logo">
 <img src="logo.png">
 <span>DAKAR ELITE DRIVER</span>
 </div>
 
 <div>
+<a href="#">Accueil</a>
 <a href="#services">Services</a>
 <a href="#fleet">Flotte</a>
-<a href="#booking">Réserver</a>
 <a href="#contact">Contact</a>
 </div>
+
 </nav>
 
 <!-- HERO -->
-<div class="hero">
-<h1>Chauffeur Privé Premium à Dakar</h1>
-<button class="btn">Réserver Maintenant</button>
+
+<section class="hero">
+
+<h1>Chauffeur Privé Premium Dakar</h1>
+<p>VTC • Mariage • Business • Tourisme</p>
+
+<button class="btn">Réserver maintenant</button>
+
+</section>
+
+<!-- BOOKING -->
+
+<div class="booking">
+
+<select>
+<option>Choisir service</option>
+<option>Transfert Aéroport</option>
+<option>Tourisme</option>
+<option>Mariage</option>
+<option>Business</option>
+<option>Location</option>
+</select>
+
+<input type="date">
+
+<button class="btn">Demander devis</button>
+
 </div>
 
 <!-- SERVICES -->
-<div class="section" id="services">
-<h2 class="title">NOS SERVICES</h2>
+
+<section class="section" id="services">
+
+<h2 class="title">SERVICES PREMIUM</h2>
 
 <div class="grid">
 
 <div class="card">
+<img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d">
+<div class="card-body">
 <h3>Transfert Aéroport</h3>
-<p>AIBD - Dakar centre</p>
+<p>AIBD vers Dakar avec chauffeur privé</p>
+<button class="btn">Réserver</button>
+</div>
 </div>
 
 <div class="card">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+<div class="card-body">
 <h3>Tourisme</h3>
-<p>Gorée - Lac Rose - Bandia</p>
+<p>Gorée • Lac Rose • Bandia</p>
+<button class="btn">Réserver</button>
+</div>
 </div>
 
 <div class="card">
+<img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c">
+<div class="card-body">
 <h3>Mariage VIP</h3>
-<p>Véhicule luxe cérémonie</p>
+<p>Voiture luxe cérémonie</p>
+<button class="btn">Réserver</button>
+</div>
 </div>
 
 <div class="card">
+<img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7">
+<div class="card-body">
 <h3>Business</h3>
-<p>Service entreprise</p>
+<p>Transport entreprises</p>
+<button class="btn">Réserver</button>
 </div>
-
-<div class="card">
-<h3>Location longue durée</h3>
-<p>-10% dès 10 jours</p>
-</div>
-
-<div class="card">
-<h3>Partenariat</h3>
-<p>Revenu partagé flotte</p>
 </div>
 
 </div>
-</div>
+
+</section>
 
 <!-- FLOTTE -->
-<div class="section" id="fleet">
+
+<section class="section" id="fleet">
 
 <h2 class="title">NOTRE FLOTTE</h2>
 
 <div class="grid">
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
-<h3>Range Rover</h3>
-<p>VTC Premium</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1550355291-bbee04a92027">
-<h3>Toyota Prado</h3>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
-<h3>Toyota Camry</h3>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1549924231-f129b911e442">
-<h3>Mercedes GLE</h3>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d">
-<h3>Hyundai Palisade</h3>
-</div>
+<div class="car">Range Rover Sport</div>
+<div class="car">Toyota Prado</div>
+<div class="car">Hyundai Palisade</div>
+<div class="car">Mercedes GLE</div>
+<div class="car">Toyota Camry</div>
 
 </div>
 
+</section>
+
+<!-- AVIS -->
+
+<section class="section">
+
+<h2 class="title">AVIS CLIENTS</h2>
+
+<div class="grid">
+
+<div class="testimonial">
+⭐⭐⭐⭐⭐  
+Service professionnel et chauffeur ponctuel.
 </div>
 
-<!-- BOOKING -->
-<div class="section" id="booking">
+<div class="testimonial">
+⭐⭐⭐⭐⭐  
+Voiture propre et luxe. Je recommande.
+</div>
 
-<h2 class="title">RÉSERVATION</h2>
-
-<div class="form">
-
-<input placeholder="Nom">
-<input placeholder="Téléphone">
-<input placeholder="Adresse départ">
-<input placeholder="Destination">
-
-<select>
-<option>Choisir service</option>
-<option>Tourisme</option>
-<option>Mariage</option>
-<option>Business</option>
-<option>Aéroport</option>
-</select>
-
-<select>
-<option>Choisir véhicule</option>
-<option>Range Rover</option>
-<option>Prado</option>
-<option>Camry</option>
-<option>GLE</option>
-</select>
-
-<button class="btn">Réserver</button>
-
+<div class="testimonial">
+⭐⭐⭐⭐⭐  
+Parfait pour transfert aéroport.
 </div>
 
 </div>
+
+</section>
 
 <!-- CONTACT -->
-<div class="section" id="contact">
+
+<section class="section" id="contact">
 
 <h2 class="title">CONTACT</h2>
 
-<p style="text-align:center">
-📞 77 095 37 66<br>
-📞 76 903 87 55<br>
-📍 Dakar Sénégal
-</p>
+<center>
 
-<div style="text-align:center;margin-top:20px">
+📞 77 095 37 66<br><br>
+📞 76 903 87 55<br><br>
 
-<a href="https://wa.me/221770953766" class="btn">WhatsApp</a>
+<a href="https://wa.me/221770953766">
+<button class="btn">WhatsApp</button>
+</a>
 
-</div>
+</center>
 
-</div>
+</section>
 
 <footer>
 
-© Dakar Elite Driver — Tous droits réservés
+<div class="footer-grid">
+
+<div>
+<h3>Dakar Elite Driver</h3>
+Chauffeur privé premium à Dakar
+</div>
+
+<div>
+<h3>Services</h3>
+Transfert Aéroport<br>
+Tourisme<br>
+Mariage<br>
+Business
+</div>
+
+<div>
+<h3>Contact</h3>
++221 77 095 37 66<br>
+Dakar Sénégal
+</div>
+
+</div>
+
+<center style="margin-top:30px">
+© 2026 Dakar Elite Driver — Tous droits réservés
+</center>
 
 </footer>
 
